@@ -1,0 +1,52 @@
+* Collaboration is an important part of web dev
+
+* Use #TheOdinProject to share your progress
+
+* Join the Discord! It's an Oasis of knowledge etc etc
+
+* Can provide feedback there for TOP
+
+* Sometimes the problem if your approach and not your code
+
+* You don't need to know how to solve the problem, but you need to know where you're going
+
+* Rubber duck debugging (going line-by-line)
+
+
+Process:
+What do you think it is? 
+What do you expect to happen?
+What is actually happening?
+How did you get there?
+What have you tried?
+
+* Screenshots are good
+
+* Using backticks is good
+
+* Various chat features available in Discord
+
+* Helping others effectively is important
+	- Help by guiding them to the answer
+	- Help when you are certain of the answer
+	- Help when others aren't helping (and not interrupting)
+	- Help when you have time
+	- Help by adjusting to their level of where they are in the curriculum
+	- Help by asking for clarification if need be
+	- Help by asking them to use Replit for live code
+	- Help by not answering Googleable questions
+	- Help by not answering questions available in the curriculum
+	- Help by answering the inital question before other problems
+	- Help by encouraging the use of a debugger
+	- Help by encouraging students if they need to take a step back for perspective
+	- Help students who are in over their head or haven't fully grasped material
+	- Help by admitting if the problem goes beyond your knowledge
+	- Help by being patient
+	- Help by ducking out of the convo if you're frustrated
+
+Assignment
+
+1. Make a GitHub
+2. Join the Discord
+3. Link your GitHub in your Discord
+4. General common sense rules apply to chatting on Discord
