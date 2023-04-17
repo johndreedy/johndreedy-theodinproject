@@ -1,0 +1,55 @@
+* A computer is an electronic device that manipulates data
+* It can store, retrieve and process data
+
+* PC sees data as 1s and 0s
+* From this it can process it as images, videos, games, etc
+* Hardware is a physical component
+* Software tells hardware instructions
+
+* Operating systems
+	- Windows
+	- Mac
+	- Chrome OS
+	- iOS
+	- Android
+	- All sorts of other tech
+
+* Servers send info on a network
+
+* Types of PC
+	-Desktop
+	-Laptop
+	-Tablet
+	-Server
+	-Smartphone
+	-Smartwatches
+	-Games Consoles
+	-TVs
+
+*Parts of a PC - case, monitor, keyboard, mouse, power chord
+
+* Operating system:
+	- An operating system managers all of the software and hardware
+	- Runs on the CPU, memory and storage
+
+* What is an application?
+	- A software that allows you to perform specific tasks
+	- It runs inside the operating system
+	- More than one at a time is called multi-tasking
+
+* Open source vs closed source
+	- Closed source properietary software does not allow access to the public
+	- Majority is clossed source
+
+	- Open source is usually free
+	- Public collaboration is encouraged
+	- Less user friendly
+	
+	- Closed source is a stable, focused product
+	- Often costs money
+
+Assignment
+	1. Windows is an operating system
+	2. Open source allows the public to access the code, closed source does not
+	3. Use cases of a screenshot could be sending an error message or capturing information on your desktop
+	4. A weak password has easy to guess info whereas a strong password has numbers and a mixture of letter cases
