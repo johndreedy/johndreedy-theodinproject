@@ -1,0 +1,107 @@
+* Before you can program, you need a rigorous / holistic view of how it works
+
+Some questions:
+* What is the internet
+* What are packets
+* How do packets trasnfer data
+* What is a web page vs a server vs a browser, etc
+* What is a client
+* What is a server
+* What are IP addresses
+* What are DNS servers
+
+BBC Video:
+
+* Originally was a project by ARPANET to connect a dozen university systems together
+* Facilitated research for universities in the USA via a "packet-switch network"
+
+* First word was "Login", but crashed before G
+
+* 1.2 million km of submarine cables; connect server buildings together
+
+(cue title screen) THE INTERNET
+
+How it works
+
+* Device requests a connection
+* Request goes to regional networks
+* Goes to a main regional server
+* Goes across the globe to where the video is stored
+* Information is torn apart in what is called "packets"
+* Then rearranged to create data / information
+
+Mozilla Article 1:
+
+* To solve all PCs needing to connect to each other, they use a router
+* Similar to a signaler at a railway telling them where to go
+* Computer A -> Router -> Comupter B -> Avoid computer C
+
+* What if we have too many connections? Connect routers to routers
+* Can scale infinitely
+
+* How do you connect with anyone? By using telephone infrastructure
+* Uses a piece of equipment called a modem
+* This modem turns info from our router into data manageable by telephone infrastructure
+
+* To send messages to the network we want, it connects to an internet service provider (ISP)
+
+* To find another PC it is linked to a network with an IP address (Internet Protocol)
+* Four numbers separated by dots
+
+* IP can be made readable with a domain name
+
+* Internet =! Web
+* Internet = infrastructure
+* Web = service
+
+* Intranet can be used as a private network
+
+Mozilla Article 2:
+
+Web page = document that can be displayed in a browser
+Website = a collection of pages grouped together
+Web server = a computer that hosts the website
+Search engine = a service that helps you find other pages
+
+For example if you went to a public library you'd find the index / title of the book you want.
+Then make a note of the catalogue number.
+Then go to that particular section to find it.
+
+A web page is written in HTML.
+	- Style information
+	- Scripts
+	- Media
+
+Mozilla Article 3: 
+
+* Computers connect through clients and servers
+	- Client sends a request, server sends a response
+	- Client is typically the device itself
+	- Server is a computer that stores the website
+	- A copy of the server website is downloaded onto the client
+
+* Other factors
+	- Internet connection
+	- TCP / IP is communication that determines how the data travels
+	- DNS is domain name system that is an address book for websites
+	- HTTP is hypertext transfer protocol, eg. a message for client and servers to speak
+	- Component files, ie HTML, CSS and JavaScript
+	- Assets such as images, music, video, etc
+
+1. Browser goes to DNS server and finds the real address of it
+2. Browser sends a HTTP request to the server asking to send a copy of the website to the client
+3. If the HTTP request is approved it sends a "200" message and sends the website data in packets
+4. The browser assembles the packets into a complete display
+
+DNS = domain name system allows IP address to correspond with a HTTP address (http://www.example.com)
+
+* Resolving name server looks up the HTTP address
+
+* DNS is a human-readable address
+* There are IPv4 and IPv6
+
+* TLD = top-level domain
+It is the general purpose of the service behind the name
+For example, governments, countries, etc
+
+You cannot buy a domain name, only rent it.
