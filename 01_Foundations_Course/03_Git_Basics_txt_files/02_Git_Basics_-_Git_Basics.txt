@@ -1,0 +1,27 @@
+Cheat Sheet:
+
+git clone git@github.com:USER-NAME/REPOSITORY-NAME.git
+
+git push / git push origin main
+
+git add. 
+
+git commit -m "A message describing your changes for this snapshot"
+
+git status
+
+git log
+
+program | action | destination
+
+eg:
+
+git | add | .
+
+Two best practices:
+
+* Atomic commit is a commit that only changes one feature / task of a program
+* If something you change causes problems, it's easy to revert
+* Enables you to write better commit messages
+
+* Most important thing right now is basic workflow
