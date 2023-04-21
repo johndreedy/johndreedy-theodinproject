@@ -1,0 +1,15 @@
+* Some basic command line functions in Linux
+
+* cd = change directory
+
+* cd ~/...etc = from root change directory
+
+* mkdir = make directory
+
+* rm = remove directory
+
+* rm -r = remove all files recursively (delete all)
+
+* pwd = print working directory
+
+* ls = list all files / folders in directory

@@ -1,0 +1,69 @@
+Video: GitHub for Noobs
+
+* Linux Kernel was an open source software project developed in 1991
+
+* In 2002 DCBS (distributed version control) was introduced, called BitKeeper
+
+* In 2005 the relationship broke down between Linux Kernel and the company that
+produced BitKeeper, meaning BitKeeper was no longer free
+
+* The Linux community and Linus Torvalds developed their own program
+
+* Priorities were
+	- Speed
+	- Simple design
+	- Focus on non-linear development
+	- Fully-distributed
+	- Able to handle large projects
+
+* Used on the command line
+
+* GitHub was formed in late 2007
+* Larged code repository for code
+* Additional tools are web-based GUI, desktop app, access control, collab features, etc
+
+Video: What is Git?
+
+* A version control system records our code changes over time - who, when, why, etc.
+* Otherwise you need to store all the project files in separate folders and merge changes manually
+
+* Can either be centralised or distributed
+* Problem with centralised is if the server goes down, everything does down
+* For distributed, every member has a copy of the project
+
+Git Article - Getting Started About Version Control:
+
+* Version control lets you record changes to files so you can recall them later
+* Very wise if you're a graphic or web designer
+
+* RSC (Revision Control System) keeps patches in a special format on disk
+* It then adds these patches up to re-create the file at that time
+* CVCS (Centralised Version Control System) have a single server that contains the versioned files
+* The downside is there is a single point of failure
+
+* DVCS (Distributed Version Control System) fully mirror repositories including full history
+* Every clone on the system is a full backup
+
+* Snapshots, not differences
+* Every time you commit, Git takes a picture of what your files look like
+* Nearly every operation is local, no info from another PC / network
+* Can do everything fully offline, in other systems you would need a connection to the server
+* Everything in Git is checksummed (a hash value) so can't lose information in transit
+* Git almost always only adds data
+
+* Three stages
+	- Modified: you have changed the file but not committed it yet
+	- Staged: you have marked the modified file to be committed
+	- Committed: your data is now safely stored in your local database
+
+* Working tree is the single checkout of one version of the project
+* Staging area is contained in your Git directory that stores information about your next commit
+* Git directory stores your metadata and object database; this is what is copied when you clone a repository
+
+Workflow is generally
+	- You modify files in the working tree
+	- You stage those changes you want to be your next commit
+	- You do a commit, which takes the files in the staging area and stores in permanently in your Git repository
+
+* The command line is better than a GUI because you have more features available
+* You will know all the GUI features learning from command line whereas the reverse may not be true learning from a GUI

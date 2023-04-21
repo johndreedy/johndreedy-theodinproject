@@ -1,0 +1,1 @@
+All installations for my OS (Linux), Google Chrome browser, my code editor (VSCode) and an SSH key for Git!
