@@ -1,0 +1,40 @@
+* HTML and CSS work together to create everything you see on the internet
+* HTML is the raw data a page is built out of - all the text, buttons, lists, etc
+* CSS adds style and positions that information, gives it color, improves the visuals, etc
+
+* HTML and CSS are not programming languages in the sense they only present information 
+* They don't deal with logic
+* JavaScript however is a programming language because it adds webpage functionality
+
+* There is a lot you can do with just HTML and CSS
+
+* HTML determines how the web page is displayed in the browser
+* CSS determines how the HTML is styled
+* JavaScript provides interactive elements to CSS and HTML after it has loaded
+
+HTML = Hypertext Markup Language
+CSS = Cascading Style Sheet
+
+HTML creates the structure, CSS makes it more visually appealing, JavaScript adds user interactivity
+
+* Web development languages include HTML, CSS, JavaScript, PHP, Python, Ruby, SQL
+
+Ruby is very scalable and fast, building websites quickly.
+Ruby on Rails framework gives everything needed to build a site.
+
+SQL is for streamlining large databases.
+
+Some platforms are built using more languages than others.
+
+Recommended to learn HTML first as it is the structure for CSS and JavaScript to be embedded.
+
+CSS is a style sheet language that's focused on improving the presentation of HTML.
+Also offers functionality for simple animations. 
+
+JavaScript adds a layer of interactivity, which appeals to the modern customer.
+
+For example, you can:
+
+* Create a calculator
+* Create keyboard shortcuts to navigate to other pages
+* Play animations when users scroll down.
