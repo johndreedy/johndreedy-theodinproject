@@ -1,1 +1,13 @@
 See: index.html
+
+What is the purpose of the doctype declaration?
+To determine that the document is HTML and it follows HTML5 conventions.
+
+What is the HTML element? 
+The HTML element is the root element and every other element is a descendant.
+
+What is the purpose of the head element?
+The head element is where we put metadata about our website and NOT any content.
+
+What is the purpose of the body element?
+The body element is where the content of the website goes that users can see.
