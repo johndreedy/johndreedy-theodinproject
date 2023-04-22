@@ -1,0 +1,39 @@
+HTML defines the structure and content of webpages.
+
+* Almost all elements on a HTML page consist of opening and closing tags.
+
+* Opening is <> and defines the start of an element, for example <p>
+
+* Closing is </> and defines where the element ends, for example </p>
+
+* Elements are containers for content
+
+* Some elements don't need a closing tag:
+
+	- <br /> and <img/>
+	- <br> and <img>
+
+* These are self-closing tags
+
+* HTML has many pre-defined tags, and it's important to use the correct tags
+* This is called semantic HTML
+
+Intro to HTML video:
+
+<wrapping-paper>
+ <box>
+  <train>
+   <locamotive>
+    <car>
+    <car>
+    <car>
+   </locamotive>
+  </train>
+ </box>
+</wrapping-paper>
+
+What is a HTML tag?
+A HTML tag is a wrapper for content that defines the structure of a website.
+
+What are the three parts of an HTML element?
+Opening tag, content, closing tag.
