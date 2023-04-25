@@ -1,0 +1,73 @@
+* CREATING LINKS *
+
+<a> = Anchor element for URL
+Must be used in conjunction with a link
+
+For example:
+<a href="https://www.theodinproject.com/about">Click me!</a>
+
+Absolute links = links to pages on other websites
+
+protocol://domain/path
+
+https://www.theodinproject.com/about
+
+./ is file relative to the current directory
+This will often redirect to the correct pathway
+
+* A metaphor:
+town.com is a town, in which /museum is location
+Each page in the website is a room of the museum
+For example /museum/movie_room.html
+Or /museum/shops/coffee_shop.html
+
+Relative links like ./shops/coffee_shop.html are a direction from the current room
+
+Absolute links are full directions including the protocol (https), or domain name (town.com)
+and the path from that domain name (/museum/shops/coffee_shop.html)
+
+In total: https://town.com/museum/shops/coffee_shop.html
+
+* SHOWING IMAGES *
+
+HTML has a wide variety of elements for different media.
+
+Images can be shown with:
+<img src="images/image.jpg" alt="An image">
+
+The alt attribute is for when the image does not load, or to read for the visually impaired
+
+"../images/image.jpg" would use ../ to access the parent directory
+
+You would use a normal source for the main directory, and ../ for any sub-directories.
+
+img tags are one of the few that don't need closing brackets.
+
+* IMAGE TYPES *
+
+.jpg is good for large colour palettes without large file size
+.jpg does not allow for transparent pixels, however
+
+.gif is good for simple animations but are limited in colour palette
+.gif allows transparent pixels but not semi-opaque pixels
+
+.png has a high level of detail and would be bigger than .jpg
+.png would not be appropriate for large images due to size
+
+.svg is vector based, meaning it scales to dimensions without loss of quality
+.svg needs to convert text fields to outlines using your image editor
+If your images contain a lot of text it can have an impact on file size.
+
+
+* FILE STRUCTURE *
+
+Generally an index.html, an img folder, a css folder, js folder, etc
+
+All in lowercase
+
+No spaces, because it will become %20
+%20 represents a space in an encoded URL
+
+Keep filenames descriptive so you know what they actually are
+
+For links, the target= attribute also helps to determine where in the page it should go to.
