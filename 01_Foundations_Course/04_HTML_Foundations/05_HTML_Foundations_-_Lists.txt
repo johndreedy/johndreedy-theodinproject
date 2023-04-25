@@ -1,0 +1,19 @@
+<ul> = unordered list
+
+The order of the list doesn't matter, for example a shopping list.
+
+<ol> = ordered list
+
+The order of the list does matter, for example step-by-step instructions, or a top 10 list.
+
+<li> = each item of list
+
+Other attributes
+
+<ol start="30"></ol>
+<ol reversed></ol>
+
+<dl> = Description List
+<dt></dt> = Description Term
+<dd> = Description Element
+
