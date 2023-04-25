@@ -1,0 +1,14 @@
+<p></p> = New paragraph
+
+<h1></h1>, <h2></h2>, etc = Heading (six heading tags total)
+
+<strong></strong> = Bold text
+
+<em></em> = "Emphasis" or italic text
+
+DIFFERENCE BETWEEN <b> AND <strong>, OR <em> and <i>
+
+Accessibility settings mean for people using screen readers that <strong> and <em> are much preferred.
+This is because it adds strength or emphasis when voice reading as well as just visually.
+
+<b> and <i> are fine for visual cues such as brands or names but generally should be avoided.
