@@ -1,0 +1,82 @@
+* Good commit messages are important
+
+* When you are applying for jobs, employers will look through your projects on GitHub
+* Having good commits will help you stand out
+
+* Helps you quickly see what changes were made in code and why
+
+* Helps after stepping away and coming back to a project later
+
+* A commit is like a snapshot of the code at the moment it was made
+
+Scenario: you are working on a project and something finally works
+Then later it breaks for no reason. You have no idea what changed and everything looks the same.
+You can now revert your code to the last commit.
+
+cbea.ms Article:
+
+Commits should be descriptive but succinct
+
+It is to communicate context about a change
+
+Effort should be made to avoid re-establishing context for a piece of code
+
+Related to commands such as git blame, revert, rebase, log, shortlog, etc
+
+Absolutely vital for collaboration
+
+A project's long-term success rests on maintainability
+A team should agree on its approach to a Git log.
+
+For example: markup syntax, wrap margins, grammar, capitalisation, punctuation, etc.
+
+What should the body of the commit message contain?
+
+How should tracking IDs be referenced?
+
+Etc
+
+Separate subject from body using a blank line
+
+eg. $ git commit -m"Fixed typos in introductory user guide"
+
+Multi-line comments
+
+$ git commit -m"Fixed typos" -m"Typo 1" -m"Typo 2"
+
+OR
+
+$ git commit -m"Fixed typos
+Typo 1
+Typo 2"
+
+To check use $ git log --oneline
+and $ git shortlog
+
+Limit the subject to around 50 characters
+
+Capitalise the subject line
+
+Do not use a full stop to extend the subject line
+
+Use the imperative mood, for example "do this, do that"
+Or "Merge repository", "Fix Python bugs"
+
+You should always be able to complete the following sentence:
+
+"If applied, this commit will _____(insert subject line here)"
+
+Wrap the body at 72 characters
+
+For example, using Vim
+
+Use the body text to explain what changed, why, and how
+
+Often you can leave out details because the code is obvious
+
+Just make it very clear why you made the change.
+
+Git command line is much more versatile than IDE commits.
+Things can fall apart when you try to use IDEs for merge, rebase, or sophisticated history analysis.
+
+* Avoid words such as "save" or "update"
