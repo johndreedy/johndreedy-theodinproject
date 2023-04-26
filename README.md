@@ -1,6 +1,6 @@
 # johndreedy - The Odin Project
 
-This is my repository page for The Odin Project, a course designed to learn web and software development to a professional standard.
+This is my repository page for The Odin Project, a course designed for learning web and software development to a professional standard.
 
 Currently included are:
 
