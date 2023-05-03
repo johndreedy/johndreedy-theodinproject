@@ -5,3 +5,4 @@ Odin Recipes is a food recipe website, through which I am demonstrating my abili
 * An index page with links to other pages
 * A chorizo and potato recipe
 * A pasta puttanesca recipe
+* A Swedish sticky chocolate cake recipe
