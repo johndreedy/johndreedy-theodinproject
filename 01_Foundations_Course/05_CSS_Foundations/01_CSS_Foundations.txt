@@ -1,0 +1,213 @@
+* Before we learnt how HTML determines a website's structure
+* Now we will give that structure some style, which is what CSS is for
+
+* Basic Syntax
+
+At its most fundamental CSS is made of on various rules.
+This includes a selector and a separated list of declarations, each being made up of a property:value pair.
+
+eg.
+
+selector {
+	property: value;
+}
+
+What is <div>?
+Div is an empty container.
+Generally it's best to use tags like <h1> or <p> but there are many cases where you just need a container for other elements.
+Later will go into when it's appropriate to use different HTML elements.
+
+* Selector = HTML element to which rules apply
+
+* = Universal
+
+* {
+	color: purple;
+}
+
+________
+
+<div>Hello world!</p>
+<p>Hello world!</p>
+
+________
+
+div {
+	color: white;
+}
+
+________
+
+<div class="alert-text">
+	Please agree to our terms of service.
+</div>
+
+________
+
+.alert-text {
+	color: red;
+}
+
+.alert-text is the class defined in div class
+Everything inside of the alert-text div class affects it.
+
+Can add multiple classes via class="alert-text severe-alert"
+
+<div id="title">My awesome webpage</div>
+
+#title {
+	background-color: red;
+}
+
+People overuse the ID attribute when classes will suffice.
+They should be used sparingly if at all.
+The major difference between classes and ID is that an element can only have one ID.
+
+* Grouping selector
+Both our .read and .unread selectors should share color: white; and background-color: black;
+Instead of declaring for every element, you can do it as:
+
+.element1,
+.element2 {
+	color: white;
+	background-color: black;
+}
+
+And then any unique declarations for each.
+
+Chaining selectors:
+<div>
+  <div class="subsection header">Latest Posts</div>
+  <p class="subsection preview">This is where a preview for a post might go.</p>
+</div>
+
+.subsection.header {
+	color: red;
+}
+
+This selects any element that has both the subsection and header classes.
+
+You can also chain classes and IDs.
+
+* Descendant Combinators
+
+Allow us to combine multiple selectors differently than grouping or chaining them
+They show a relationship between selectors.
+They are represented by a single space.
+
+.ancestor .child
+
+This will select an element (ancestor) with the class 'child'
+
+.one .two .three .four
+
+* Basic Properties
+
+* color sets the element's color
+* background-color sets the background color (duh!)
+
+These values accept HEX, RGB, HSL, and so on.
+
+p {
+	color: #1100ff;
+	color: rgb(100, 0, 127);
+	color: hsl(15, 82%, 56%);
+}
+
+* font-family is either a single value or comma separated list
+If there is a space it requires quotations "DejaVu Sans"
+
+* If it does not find the first font in a list then it will use the next one, AKA a fallback
+
+Best practice is to include a list of values.
+
+* Font size sets the size of the font
+* Font weight sets the thickness or thinness
+
+font-size: 22px;
+font-weight: bold;
+OR
+font-weight: 700;
+
+text-align aligns the text
+text-align: center;
+
+* Image Height and Width
+
+img {
+	height: auto;
+	width: 500px;
+}
+
+It is best to include these properties even if you don't plan on adjusting the values.
+It takes longer to load than the rest of the page otherwise.
+Adding the values means the space is "reserved" and will appear as a blank space.
+
+* The Cascade of CSS
+
+Sometimes there are rules that conflict with one another.
+CSS only does what we tell it to do - with the exception of the default styles in each browser.
+This is why some elements create a large "gap" or why buttons look different, despite not writing any CSS for them.
+
+* In CSS a declaration that is more specific will take precedence over less specific.
+Inline has the highest specificity. Specificity is taken into account when an element has multiple declarations for it.
+ID selector will always beat class selector will always beat type selector, etc.
+
+For example #subsection referring to a HTML ID beats class .main and .list
+
+If there are more class selectors then it has a higher specificity.
+
+Type selector (eg. h1) outweights universal selector *
+
+* Inheritance
+
+Inheritance refers to CSS properties that are inherited by the elements descendants when applied.
+Typography based properties are usually inherited; most other properties aren't.
+
+<div id="parent">
+	<div class="child"></div>
+</div>
+
+In this case the child would take precedent because the declaration directly targets it.
+
+* Rule Order
+
+All things aside, if there are multiple conflicting rules then the overriding rule is whichever rule was last defined.
+
+If there is no inheritance or specificity then the last rule defined is applied.
+
+* Adding CSS to HTML
+
+* External CSS is the most common method.
+
+For example
+
+<head>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+div {
+	color: white;
+	background-color: black;
+}
+
+p {
+	color: red;
+}
+
+* You can name the .css file whatever you want
+
+* Internal CSS can also be used with <style></style>, for example when adding unique styles to a single page.
+* This can make the HTML file pretty big however
+
+* Inline CSS
+* This method isn't as recommended 
+
+For example
+<body>
+	<div style="color: white; background-color: black;">...</div>
+</body>
+
+* Good for adding a unique style to a single element
+
+* Inline CSS will override the other two methods
