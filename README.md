@@ -4,6 +4,6 @@ This is my repository page for The Odin Project, a course designed for learning 
 
 Currently included are:
 
-* __01_Foundations_Course__ - All notes taken from the Odin Project Foundations course
+* __01_Foundations_Course__ - All notes taken and learning exercises completed from the Odin Project Foundations course
 
 * __odin-recipes__ - A food recipe website project, to demonstrate my skills in HTML
