@@ -6,4 +6,4 @@ Currently included are:
 
 * __01_Foundations_Course__ - All notes taken and learning exercises completed from the Odin Project Foundations course
 
-* __odin-recipes__ - A food recipe website project, to demonstrate my skills in HTML
+* __odin-recipes__ - A food recipe website project, to demonstrate my skills in HTML and CSS
