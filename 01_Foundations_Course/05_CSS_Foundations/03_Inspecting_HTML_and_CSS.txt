@@ -1,0 +1,21 @@
+* Being able to inspect and debug your HTML and CSS is critical for web dev
+
+* To access the inspector in Chrome press F12
+
+* There's a lot to take in but right now we'll focus on the Elements and Styles panels
+
+* When an element is selected, the Styles tab will show all currently applied styles
+* It will also show any styles that are being overwritten (using a strikethrough)
+
+* The Styles pane can also edit styles inside of the browser and change in real time
+
+* Google Chrome dev tools
+- Console panel = shows JavaScript console log
+- Sources panel = shows JavaScript source code
+- Network panel = shows network activity
+- Record panel = can record, replay and measure user flows
+- Performance panel = can find ways to improve runtime performance
+- Memory panel = shows memory usage
+- Application panel = shows all loaded resources including databases, storage, cookies, data, etc
+- Security panel = shows certificate, connection security, resource security, etc
+- Community = can file bug reports using Crbug
