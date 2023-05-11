@@ -1,3 +1,6 @@
+(The Odin Project was updated part-way through completing this exercise and it was split into two parts)
+(However the content is exactly the same)
+
 * Before we learnt how HTML determines a website's structure
 * Now we will give that structure some style, which is what CSS is for
 
@@ -211,3 +214,32 @@ For example
 * Good for adding a unique style to a single element
 
 * Inline CSS will override the other two methods
+
+* KNOWLEDGE CHECK
+
+External CSS = external .css file with the <link> tag
+Internal CSS = internal .css code with the <style> tag
+Inline CSS = directly editing a single line with the <div style=""> tag
+
+Class = <div class="">...</div>
+ID = <div id="">...</div>
+
+A single rule to two different selectors can be applied with
+
+selector1, selector2 {
+rule: value;
+}
+
+You can combine IDs and classes, for example
+
+#title.primary {
+rule: value;
+}
+
+Descendant combinators mean that you can access an element nested within another element.
+
+Type selector = p, div, body, etc
+Class selector = .class
+ID selector = #id
+
+Type selector always wins out.
