@@ -1,0 +1,28 @@
+* The Box Model
+
+* The most important skills to learn when mastering CSS is positioning and layout
+
+* Changing fonts and colours is important but placing things where they need to be is more important
+
+* People rush through HTML and CSS to get to JavaScript but end up missing these fundamentals
+
+* The first important concept to be success in CSS is the box model
+* Every single thing on a webpage is a rectangular box
+
+* The boxes can have other boxes inside of them
+
+* The only complication is that there are many ways to manipulate the size of these boxes and the space between them
+	- padding = increases the space between the border and the content of a box
+	- margin = increases the space between the borders and borders of adjacent boxes
+	- border = adds space between the margin and padding
+
+* From inside to outside, the order of box-model properties is content, padding, border, margin
+
+* The box-sizing CSS property changes the box model mode to alternate, so the margin is the addition of all nearby elements rather than reducing the pixels
+
+* In the alternative mode, any width is the width of the box visible on the page, minus border and padding
+* No need to add things up to get the real size of the box!
+
+* You would use margin to create more space between two elements
+* You would use padding to create more space between the element contents and its border
+* You would use margin (negative) for two elements to overlap with one another
