@@ -1,0 +1,34 @@
+* Different display types have different box modelsw
+
+* You can change how a box is calculated by changing the display property
+
+* Block vs Inline
+
+* Most elements learnt about so far are block elements
+* By default they'll appear on the page stacked on top of each other
+
+* Inline elements don't start on a new line, they appear in line with whatever elements they are placed beside
+* For example a link or <a> tag
+* If you put it in the middle of a paragraph it will behave like a part of it
+* Generally you don't want to put extra padding or margin on inlne elements
+
+* Inline-block is useful but generally you'll use flexbox more often
+
+* Divs and Spans
+
+* All other HTML elements we've encountered so far give meaning to their content
+* Strong elements tell the browser which text is important
+* Paragraph elements tell the browser to display text as a paragraph
+
+* However, divs and spans give no particular meaning - they are just generic boxes
+
+* This is much more useful than it first seems; we often need elements just to be "hook" elements
+* This could mean giving an id or class to be styled via CSS
+* It could also mean grouping related elements under one parent element to position on the page
+
+* Div is a block-level element, so it is used as a container to group other elements
+* It means we can divide the page into different blocks and apply styling to them
+
+* Span is an inline element so it can be used to group text context and other inline HTML elements together
+
+* You can change the element's display property with display: block; or display: inline-block;
