@@ -1,0 +1,28 @@
+* Introduction to Flexbox
+
+* There are many ways to move elements on a page
+
+* Flexbox is a relatively new way of manipulating elements in CSS
+
+* Some resources put it near the end of the curriculum as it's somewhat new
+* However since it's the default way of positioning elements it may as well be learnt first
+
+* Flexbox can get complicated
+* Inspecting and debugging will become crucial in the following lessons
+* If something is awry or not behaving correctly then inspect it every time
+
+* Flexbox isn't more difficult but does have more moving parts
+* It will be necessary to reference these lessons during assignments at the end of the section
+
+* Let's Flex!
+
+* Flexbox arranges items into rows and columns
+
+* Some properties belong to the flex container, while some belong to flex items
+* A flex container is any element that has display: flex on it
+
+* An element can be both a flex container and also a flex item
+* You could put display: flex on an item and then use flexbox to arrange its own children
+
+* A flex container is what holds the flex items, whereas flex items are individual elements that populate the container
+* An element is automatically a flex item if it lives inside a container

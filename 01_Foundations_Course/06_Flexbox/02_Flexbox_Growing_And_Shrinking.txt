@@ -1,0 +1,45 @@
+* The flex declaration is shorthand for 3 properties you can put on an item.
+
+* These properties affect how flex items size themselves
+
+* The 3 properties are
+	- flex-grow
+	- flex-shrink
+	- flex-basis
+
+* flex: 1 would equate to 1 1 0 for the above
+
+.container > div {
+	flex: 1;
+}
+
+The properties will grow and shrink with the browser window.
+It will automatically allocate space to the div container in this example.
+
+* flex-grow expects a single number as its value
+* That number is used as the flex-item's "growth factor"
+* flex: 1 = grows the same amount
+* flex: 2 = grows twice as much
+etc
+
+* flex-shrink is similar to flex-grow but the inverse direction
+* It only ends up being applied if the size of all flex items is larger than their parent container
+* The default factor is flex-shrink: 1
+* If an item should not shrink you can specify flex-shrink: 0
+* When you specify flex-grow or flex-shrink, the items do not always respect the values for width
+
+* flex-basis sets the initial size of a flex item - any growing or shrinking starts from that size
+* Using auto as a flex-basis tells the item to check for a width declaration
+
+W3 article:
+
+* flex: initial sizes the item based on width / height properties
+* Makes the item inflexible when there is positive free space but shrinks it to its minimum size when there is insufficient space
+
+* flex: auto sizes the item based on width / height
+* The items are fully flexible, so they absorb any free space which will be distributed evenly
+
+* flex: none makes width / height fully inflexible so they do not scale (neither growing nor shrinking)
+
+* flex: <positive-number> makes the flex items flexible and sets the basis to zero
+* The item sizes will be proportional to the specified flex factor (number given)
