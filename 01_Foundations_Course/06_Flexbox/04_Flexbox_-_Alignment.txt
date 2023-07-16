@@ -1,0 +1,75 @@
+* So far we've only dealt with flex: 1 on all items
+* However flex is also useful for arranging items with a specific size
+
+* flex: 1 makes .item grow to fill all available space
+
+* 'justify-content: space-between' aligns items along the main axis
+
+	- flex-start
+	- flex-end
+	- center
+	- space-around
+	- space-between
+	- space-evenly
+
+* You can also use 'align-items: center' which groups all items in the centre
+
+	- stretch
+	- flex-start
+	- flex-end
+	- center
+
+* The 'gap' property is useful for adding a space between flex items, for example 'gap: 8px;'
+* It's a new property but works reliably on modern browsers
+
+* Interactive Guide to Flexbox Article *
+
+* CSS contains different layout algorithms, the default is 'flow' but we can change it to 'flex'
+* This creates a flex-formatting context
+
+* Each layout solves a specific problem
+
+* Grid and Flexbox solve different problems
+* Flexbox is for dynamic UIs
+
+* There are two types of axes, primary axis and cross axis
+	- These can be aligned with justify-content or align-items
+	- We can bunch up items together or distribute them with space
+	- justify-content is used for primary axis, align-items is used for cross axis
+	- align-self is used to apply to a child element rather than a container
+
+* Items are for the cross axis, content is for the primary axis
+
+* In flow, width is a hard constraint whereas in flex it's more of a suggestion
+
+* What is flex basis? It's essentially the width or height of the primary axis (depending if it's column or row)
+
+* flex-grow defines how much space should be consumed within each axis
+
+* flex-shrink makes items shrink proportionally if they are too big for their container
+* This means each item can be configured to pay the deficit differently
+* flex-shrink: 0; opts out of the shrinking process
+
+* We can redefine the minimum size with the min-width property to stop elements from overflowing
+* However it must be used carefully to not break the website completely
+
+* Gap lets us create space in between flex children
+
+* margin can be used to distribute the extra space
+
+* flex-wrap lets us work in two dimensions
+* If the items shrink, they'll instead sit on top of each other
+
+* Typical Use Cases of Flexbox *
+
+* Flexbox in reality is often used for jobs that are better done by Grid, as a fallback
+
+* Navigation is commonly displayed as a horizontal bar
+* Despite this being simple it was difficult to achieve before Flexbox
+
+* CSS-Tricks: A Guide to Flexbox *
+
+* Flexbox is appropriate for small-scale layouts and application components; Grid is appropriate for a larger scale
+
+* "Prefixing" Flexbox is useful to support most browsers
+* A service for CSS called Autoprefixer is available

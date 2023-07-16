@@ -1,0 +1,27 @@
+* Orientation of items can be controlled with the flex-direction property
+
+* There are 2 "axes" of a flex container
+* You can change those axes to arrange content in columns instead of rows
+
+* Flexbox can work either horizontally or vertically and the rules can change depending on the direction
+
+* Horizontal (row) is the default but it can be changed to vertical (column)
+
+.flex-container {
+	flex-direction: column;
+}
+
+* To note is that 'column' would not work as expected if we use shorthand flex: 1 - the divs will instead collapse
+* This is because it expands flex-basis to 0, meaning that flex-grow and flex-shrink start calculating from 0
+* Empty divs by default have 0 height
+
+* This is fixed by using flex: 1 1 auto, telling all items to default to their given height
+* Or we could put our own height on the parent .flex-container, or by using flex-grow: 1 instead of shorthand
+
+* When we change the flex-direction to column, flex-basis refers to height instead of width
+
+Knowledge check
+
+* With columns, flex-basis refers to height
+* With rows, flex-basis refers to width
+* If the height or width is zero then these will not work as expected
