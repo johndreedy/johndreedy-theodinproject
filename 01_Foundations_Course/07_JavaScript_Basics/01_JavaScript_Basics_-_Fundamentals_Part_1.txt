@@ -1,0 +1,476 @@
+* Time to dive into JavaScript
+
+* How to run JS code *
+
+All JavaScript in Foundations will be run via the browser
+However the later lessons and NodeJS path will show how to run JS outside the browser
+
+The simplest way is to create an HTML file with JavaScript code inside of it
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+    console.log("Hello, World!")
+  </script>
+</body>
+</html>
+
+console.log() is the command to print to the developer console.
+
+Another way to include JS is:
+<script src="javascript.js"></script>
+
+* Variables
+
+Variable can be considered as "storage containers" for data in code
+
+Until recently there was only the var statement, however in recent JS we have two more - let and const.
+
+* JAVASCRIPT.INFO TUTORTIAL ON VARIABLES *
+
+Most of the time, a JavaScript application needs to work with information, eg. an online shop or chat application.
+Variables are used to store this information.
+
+To create a variable, use the let keyword:
+
+let message;
+message = 'Hello';
+alert(message);
+
+or
+
+let message = 'Hello';
+alert(message);
+
+We can also declare multiple variables in one line:
+
+let user = 'John', age = 25, message = 'Hello';
+
+However it is not recommended for readability.
+
+let user = 'John';
+let age = 25;
+let message = 'Hello';
+
+Some people also define it as
+
+let user = 'John',
+  age = 25,
+  message = 'Hello';
+
+Or with commas
+
+let user = 'John'
+  , age = 25
+  , message = 'Hello';
+
+In older scripts you also may find var, which is almost the same but with subtle differences.
+A variable is a box for data, with a uniquely named sticker on it.
+We can put any value in the box and change it as many times as we like (for 'let')
+When the value is changed, the old data is removed.
+
+We can copy data from one variable to the other:
+
+let hello = 'Hello world';
+let message = hello;
+alert(hello);
+alert(message);
+
+Declaring a variable twice leads to an error.
+
+Languages such as Haskell forbid changing variables values and instead we would create a new variable each time.
+
+* Variable naming
+
+There are two limitations on variable names in JS:
+
+1. The name must contain only letters, digits, or the symbols $ and _
+2. The first character must not be a digit
+
+let userName;
+let test123;
+
+When the name contains multiple words, camelCase is typically used, for example myVeryLongName.
+Dollar and underscore are regular symbols like letters without any meaning.
+
+let 1a
+let my-name
+
+These aren't allowed in JS naming conventions.
+Non-latin letters are allowed but not recommended.
+Likewise names such as 'let' and 'return' are reserved and cannot be set as variables.
+
+We can also define a variable with assignment without using let.
+This still works now if we don't put "use strict" in our scripts which would maintain compability.
+
+num = 5;
+alert(num); // 5
+
+However this is bad practice and would cause an error in strict mode.
+
+"use strict";
+num = 5; // error: num is not defined
+
+* Constants
+
+To declare a constant, unchanging variable we use const
+
+const myBirthday = '18.04.1982';
+
+Trying to reassign this would cause an error.
+
+* Uppercase constants
+
+There is a widespread practice of using constants as aliases for difficult-to-remember values.
+In this case it is common to use capital letters and underscores.
+
+const COLOUR_RED = "#F00";
+const COLOUR_GREEN = "#0F0";
+const COLOUR_ORANGE = "#FF7F00";
+
+let colour = COLOUR_ORANGE;
+alert(colour);
+
+There are constants that are known prior to execution, that we would use the capital naming convention for.
+There are also constants that are calculated at run-time, during execution, that do not change after assignment.
+
+const pageLoadTime = /* time taken for page to load */;
+
+Here the page load time is not known prior to execution, however it doesn't change after assignment.
+You can think of capital-named constants as "hard-coded".
+
+* Name things right
+
+Very important is that variables should have a clean, obvious meaning in describing the data it stores.
+A quick glance at a variable name can reveal which code was written by a beginner vs an experienced dev.
+
+In real projects most time is spent modifying and extending existing code rather than writing something new from scratch.
+
+When we return to code after doing something else, it's much easier to find information that is well-labelled.
+
+Good rules:
+
+ * Use human-readable names, eg. userName or shoppingCart
+ * Stay away from abbreviations or short names, eg. a, b, c
+ * Make names maximally descriptive but also concise (so not just 'data' or 'value')
+ * Agree on terms within your team / your own mind, eg. if a site visitor is called a "user" then it could be "currentUser" or "newUser"
+
+* Reuse or create?
+
+There are some programmers who reuse variables instead of declaring new ones.
+This makes it difficult to know what value these variables are. An extra variable is totally fine and won't create performance issues in JS.
+
+* Summary:
+
+let - modern variable declaration
+var - old-school variable declaration (differences will be covered later)
+const - like let but the value can't be changed
+
+Exercise 1 (Copying):
+
+    let admin;
+    let name = "John";
+    admin = name;
+    alert(admin);
+
+Exercise 2 (Naming):
+
+    let ourPlanet = "Earth";
+    let currentUser = "John";
+
+Execise 3 (Uppercase):
+
+    const BIRTHDAY = '18.04.1982';
+    const age = someCode(BIRTHDAY);
+
+* BACK TO THE ODIN PROJECT *
+
+* Arithmetic operations *
+
+Numbers are operands, symbols are operators.
+
+Numbers
+
+    let x = 100 + 50;
+    console.log(x);
+
+Variables
+
+    const a = 100;
+    const b = 50;
+    let x = a + b;
+    console.log(x);
+
+Expressions
+
+    const a = 2.5;
+    let x = (100 + 50) * a;
+    console.log(x);
+
+Subtraction
+
+    let x = 5;
+    let y = 2;
+    let z = x - y;
+    console.log(z);
+
+Division
+
+    let x = 5;
+    let y = 2;
+    let z = x / y;
+    console.log(z);
+
+Remainder (Modulus)
+
+    let x = 5;
+    let y = 2;
+    let z = x % y;
+    console.log(z);
+
+Increment
+
+    let x = 5;
+    x++;
+    let z = x;
+    console.log(z);
+
+Decrement
+
+    let x = 5;
+    x--;
+    let z = x;
+    console.log(z);
+
+Exponentiation (Power)
+
+    let x = 5;
+    let z = x ** 2;
+    console.log(z);
+
+    OR
+
+    let x = 5;
+    let z = Math.pow(x,2);
+    console.log(z);
+
+Operator Prededence
+
+   let x = 100 + 50 * 3;
+   console.log(x)
+
+In this case, multiply and divide have higher precedence than add or subtract.
+However with parentheses () the addition or subtraction is computed first.
+
+* JavaScript Numbers (Decimals) *
+
+JavaScript has only one type of number, different to other languages
+
+    let x = 3.14; // with decimals
+    let y = 3; // without decimals
+
+Large numbers can also be written with scientific notation
+
+    let x = 123e5; // 12300000
+    let y = 123e-5; // 0.00123
+
+JavaScript numbers are always 64-bit floating point.
+
+Integers are accurate up to 15 digits:
+
+9999999999999999 will default to 10000000000000000
+
+Floating point arithmetic is not 100% accurate, for example:
+
+0.2 + 0.1 = 0.30000000000000004
+
+It is better to multiply then divide.
+
+let x = (0.2 * 10 + 0.1 * 10) / 10;
+
+JavaScript uses the + operator for both addition of numbers and concatenation (appending?) of strings.
+
+For example:
+
+    let x = "10";
+    let y = "20";
+    let z = x + y;
+    console.log(z); // 1020
+
+If you add a number and string, the result will also be a concatenation.
+
+In a sequence
+
+    let x = 10;
+    let y = 20;
+    let z = "30";
+    let result = x + y + z; // 3030
+
+The first two numbers are added together and then concatenated.
+
+JavaScript will also convert strings to numbers in numeric operations.
+
+    let x = "100";
+    let y = "10";
+    let z = x / y;
+    console.log(z); // 10
+
+Also works for multiplication and subtraction. But not for addition which will instead concatenate the strings.
+
+NaN occurs when a non-numeric string is used.
+
+    let x = 100 / "Apple"; // NaN
+
+isNaN() can be used to determine if the value is not a number.
+
+If you use NaN in a mathematical operation then the result will also be NaN.
+
+    let x = NaN;
+    let y = 5;
+    let z = x + y; // NaN
+
+Or a concatenation in the case a string is used.
+
+    let x = NaN;
+    let y = "5";
+    let z = x + y; // NaN5
+
+NaN is still a number so typeof NaN; will still return number
+
+Infinity is the value JS will return if you calculate outside of the largest possible number
+
+  let myNumber = 2;
+  // Execute until Infinity
+  while (myNumber != Infinity) {
+    myNumber = myNumber * myNumber;
+    console.log(myNumber);
+  }
+
+Dividing by 0 also generates infinity.
+typeof Infinity returns number
+
+JS interprets numeric constants as hex if they are preceded by 0x, which will be translated back into a numerical value.
+
+toString() converts numerical data into string
+
+The 'new' keyword creates an instanced version of a function based on particular arguments.
+
+== means the values are equal
+=== means the values and data types are equal
+
+* MOZILLA - BASIC MATHS IN JS *
+
+* Integers - whole numbers
+* Floats - decimal points
+* Doubles - decimals that allow greater precision
+
+There are also binary, octal and hexadecimal.
+
+toFixed() rounds up a number to a fixed amount of decimal places.
+
+To convert a string to a number you can do
+
+    let myNumber = "74";
+    myNumber = Number(myNumber) + 3;
+
+Assignment operators assign a variable to a variable.
+There are some more complex types:
+
++=
+-=
+*=
+/=
+
+These add, subtract, multiply or divide the value from itself.
+
+Comparison operators
+
+=== strict equality
+!== strict non-equality
+
+< less than
+> greater than
+
+<= less than equal to
+>= greater than equal to
+
+== and != can also be used
+
+Quick test:
+
+    function firstFunction (a, b) {
+      if (a > b) {
+        console.log("Number greater!")
+
+      } else {
+          console.log("Number lesser!");
+        }
+      }
+  
+  firstFunction(1, -1);
+
+Unary means single operand
+    x = -x;
+
+Binary means two operands
+    z = x - y
+
+Remainder (struggling with this bit!)
+
+5 % 2 =
+2 fits into 5 two times, remainder 1
+
+2 % 8 =
+Returns the smaller number
+
+Adding plus to a number string converts it into a regular number.
+
+    let apples = "2";
+    let oranges = "3";
+
+    // both values converted to numbers before the binary plus
+    alert( +apples + +oranges ); // 5
+
+* Tasks *
+
+let a = 1, b = 1;
+
+let c = ++a; // 2
+let d = b++; // 1
+
+let a = 2;
+let x = 1 + (a *= 2);
+
+a is 4
+x is 5
+
+All operators work with strings EXCEPT the + operator.
++ can be put in front of variable to convert string to number.
+
+* The Old Var *
+
+var is not block-scoped, so it can be defined anywhere in a function.
+Whereas let and const can only be manipulated within the block (curly brackets) that they take place in.
+var also cannot be loop-local. It pierces through if, for and other code blocks.
+
+var also tolerates redeclarations as many times as you like. The variables are also defined first no matter where they appear in the code.
+
+In the past, programmers invented a way to emulate block-level only visibility, called immediately-invoked function expressions (IIFE).
+
+For example
+
+(function() {
+
+  var message = "Hello";
+
+  alert(message); // Hello
+
+})();
+
+This was a way of creating private variables.
