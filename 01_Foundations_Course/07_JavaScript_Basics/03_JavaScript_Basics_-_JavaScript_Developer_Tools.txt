@@ -1,0 +1,26 @@
+* JavaScript Developer Tools
+
+Knowing how to use dev tools is an important skill for a web developer.
+For example, running JavaScript, editing HTML and CSS styles without refreshing the page, and viewing performance data.
+
+F12 opens dev tools in Chrome.
+
+DOM = Document Object Model
+
+When you're interested in a particular DOM node, inspect is a fast way to open DevTools.
+
+Keyboard shortcuts = up and down go up and down DOM, left and right either go higher into parent classes or lower into children
+
+You can simulate device mode (such as mobile) in the developer tools.
+
+Q: How do you open developer tools?
+A: Using F12.
+
+Q: How do you change screen size of a website using developer tools?
+A: With 'toggle device toolbar'
+
+Q: What is a breakpoint?
+A: A breakpoint is a part of the code where you can pause it.
+
+Q: How do you set a breakpoint?
+A: You can set a breakpoint with the checkbox in the sources tab, when you click on a line in the code.
