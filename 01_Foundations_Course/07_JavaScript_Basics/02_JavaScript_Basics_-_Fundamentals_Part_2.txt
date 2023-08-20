@@ -1,0 +1,744 @@
+* There are a few very common types of data you will encounter in JS
+
+* DATA TYPES *
+
+There are eight basic data types in JS
+
+A variable can be a string in one moment and then store a number
+
+    let message = "hello";
+    message = 123456;
+
+* Type 1. Number
+
+    let n = 123;
+    n = 12.345;
+
+Also special numeric values such as Infinity, -Infinity and NaN
+Infinity is mathematical infinity
+NaN is a computational error
+
+* Type 2. BigInt
+
+Numbers can only go up to a certain value within 64-bit storage.
+Usually that's fine but sometimes we need the entire range of big integers, eg. for cryptography or microsecond-precision timestamps.
+It's supported in most browsers but not Internet Explorer.
+
+* Type 3. String
+
+A string is surrounded by quotes in JS.
+This can be:
+
+	- "Hello"
+	- 'Hello'
+	- `Hello`
+
+Backticks are considered "extended functionality" quotes, which allow variables and expressions into a string by wrapping them in ${...}
+
+    let name = "John";
+    console.log("Hello, " + name + "!");
+    console.log(`Hello, ${name}!`);
+
+    alert( `the result is ${1 + 2}` );
+
+There is no character type (or char) for a single character like other languages, just string.
+
+* Type 4. Boolean
+
+Boolean has two values, true and false, meaning "yes, correct" or "no, incorrect".
+
+    let nameFieldChecked = true; // yes, name field is checked
+    let ageFieldChecked = false; // no, age field is not checked
+
+let isGreater = 4 > 1;
+alert(isGreater);
+
+* Type 5. null Value
+
+null value does not belong to any types previously described.
+In JS, null refers to "nothing", "empty" or "value unknown" unlike other programming languages (where it could refer to "null pointer").
+It is used if you explicitly want to set no value for a variable.
+
+* Type 6. undefined Value
+
+Undefined is a type on its own, separate from null. It means "value not assigned".
+If a variable is delcared but not assigned then it is undefined.
+
+    let age;
+    alert(age); // undefined
+
+You can explicitly assign undefined as a value however it is not recommended, whereas undefined is simply an initial value.
+
+* Type 7. Object and Symbol
+
+Other object types are "primitive" because their values only contain a single thing. In contrast, objects can store collections of data.
+The symbol type is used to create unique identifiers for objects.
+
+* Type 8. The typeof Operator
+
+typeof is used to return the type of operand. It is useful in processing values of different types or doing a quick check of a value.
+
+Math is a built-in object that provides mathematical operations.
+typeof null is "object", which is an officially recognised error kept for compatibility.
+typeof alert is a function, as functions also belong to the object type. There is technically no "function" type but it is convenient in practice.
+
+* MOZILLA ARTICLE - HANDING TEXT - STRINGS IN JAVASCRIPT *
+
+* We will look at things such as creating strings, escaping quotes in strings and joining strings together.
+
+HTML provides structure to sites, CSS allows us to precisely style it, and JavaScript contains a number of features for interactivity with websites.
+This can include custom welcome messages and prompts, showing the right text labels when needed, sorting terms into the desired order and much more.
+
+    const string = "The revolution will not be televised";
+    console.log(string);
+
+This involves declaring a variable, initialising it with a value and then returning the value.
+If you don't use quotes then you'll get an error, because the text is assumed to be a variable name, property name, reserved word, etc.
+Same for if you miss a quotation mark in a string.
+
+You can use either single or double quotes and both will work, however you cannot mix and match for the same string.
+
+* Escaping characters
+
+If you need to use quotation marks as part of a string then you can escape characters, meaning that they are recognised as text and not part of the code.
+This can be done by putting a backslash before it.
+
+    const bigmouth = 'I\'ve got no right to take my place…';
+    console.log(bigmouth);
+
+* Concatenating strings
+
+Concatenate means "join together". To do so you can use a template literal, which involves using backtick characters.
+
+    const name = "John";
+    const greeting = `Hello, my name is ${name}`;
+    console.log(greeting);
+
+You can also use it to join two variables.
+
+    const one = "Hello, ";
+    const two = "how are you?";
+    const joined = `${one}${two}`;
+    console.log(joined);
+
+Concatenation used in action:
+
+        const jsButton = document.querySelector(".specialbutton button"); // div class containing button
+
+        function buttonFunction() {
+            const name = prompt("What is your name?");
+            alert(`Hello ${name}, nice to meet you!`);
+        }
+        
+        jsButton.addEventListener("click", buttonFunction);
+
+prompt in this case refers to the window.prompt() function, which stores the text from a given variable.
+Them we use the window.alert() function to display a popup containing the variable.
+
+You can also concatenate using +, for example:
+
+    const greeting = "Hello";
+    const name = "Chris";
+    console.log(greeting + ", " + name);
+
+However template literals tend to give more readable code.
+
+* Numbers vs strings
+
+Trying to represent an alphabetical string as a number generally doesn't work, however the opposite does.
+
+    const name = "House ";
+    const number = 101;
+    console.log(`${name}${number}`);
+
+Every number also has a method called .toString() which converts a number to string.
+
+You can also include JS expressions in template literals, as well as simple variables:
+
+    const game = "Basketball";
+    const positiveScore = 49;
+    const negativeScore = 13;
+    const output = `You have scored ${(positiveScore / negativeScore).toFixed(2)} at ${game}`;
+    console.log(output);
+
+Template literals also allow multiline code.
+
+    const output = `I like the song.
+    I gave it a score of 90%.`;
+    console.log(output);
+
+The equivalent of a normal string would require line breaks (\n) in the string.
+
+* W3SCHOOLS - STRING METHODS *
+
+* String length
+
+    let text = "ABCDEFG";
+    let length = text.length;
+    console.log(length);
+
+* String slice
+
+    let text = "Apple, Banana, Kiwi";
+    let part = text.slice(7, 13);
+    console.log(part);
+
+If the second parameter is not present then the method will leave the rest of the string.
+If the parameter is negative then it will start from the end of the string.
+
+* String substring
+
+    let str = "Apple, Banana, Kiwi";
+    let part = str.substring(7, 13);
+
+Similar to slice(), however if the start and end values are less than 0 then it is treated as 0.
+
+There is also substr which is similar to slice() but specifies the character length of the extracted part.
+
+    let str = "Apple, Banana, Kiwi";
+    let part = str.substr(7, 6);
+
+If you omit the second parameter then it will slice from the end of the string (because the parameter is negative).
+
+* Replace string
+
+replace() method replaces a specified value with another value in a string
+
+    let text = "Please visit Microsoft!";
+    let newText = text.replace("Microsoft", "W3Schools");
+
+This is case sensitive, however you can use the regular expression /i
+
+   let newText = text.replace(/MICROSOFT/i, "W3Schools");
+
+To replace all matches, you can use regular expression /g
+
+    let newText = text.replace(/Microsoft/g, "W3Schools");
+
+* String replaceAll()
+
+The replaceAll() method allows you to specify a regular expression instead of a string to be replaced.
+It is a new feature of ES6 introduced in 2021 and is not supported by Internet Explorer.
+
+    text = text.replaceAll("Cats","Dogs");
+    text = text.replaceAll("cats","dogs");
+
+The global flag /g must be set if it is a regular expression.
+
+* Upper and Lower Case
+
+    let text1 = "Hello World!";
+    let text2 = text1.toUpperCase();
+
+    let text1 = "Hello World!";
+    let text2 = text1.toLowerCase();
+
+* String concat()
+
+Join two or more strings.
+
+    let text1 = "Hello";
+    let text2 = "World";
+    let text3 = text1.concat(" ", text2);
+
+* String trim()
+
+Removes whitespace.
+
+    let text1 = "      Hello World!      ";
+    let text2 = text1.trim();
+
+trimStart() removes whitespace from the beginning of a string.
+trimEnd() removes whitespace from the end.
+
+* String padding
+
+padStart() pads a string from the start.
+
+    let text = "5";
+    let padded = text.padStart(4,"0");
+
+It pads a string with another until it reaches a given length.
+It cannot be used with numbers and requires conversion to a string.
+
+padEnd() pads a string from the end with another string until it reaches a given length.
+
+    let text = "5";
+    let padded = text.padEnd(4,"0");
+
+Released in 2017, they are not supported in IE.
+
+* Extracting string characters
+
+There are 3 methods to extract string characters.
+
+charAt() returns the character at a specified index in a string.
+
+    let text = "HELLO WORLD";
+    let char = text.charAt(0);
+
+charCodeAt returns the unicode of the character at the specified index.
+This is an integer between 0 and 65535.
+
+    let text = "HELLO WORLD";
+    let char = text.charCodeAt(0);
+
+Property access [] is also allowed on strings.
+It makes strings look like arrays, although they are not. It is read only.
+
+* String split()
+
+A string can be converted to an array with split()
+
+    text.split(",")
+
+This will split on commas.
+
+    text.split("") will return an array of single characters.
+
+* JAVASCRIPT.INFO - CONDITIONALS *
+
+* Greater / less than - a > b, a < b
+* Greater equal / less equal - a >= b, a <= b
+* Equal - a == b
+* Not equal - a!= b
+
+Booleans, true and false
+
+    alert( 2 > 1 ); // true
+    alert( 2 == 1); // false
+    alert( 2 != 1); // true
+
+    let result = 5 > 4;
+    alert( result );
+
+* String comparison
+
+If a string is greater than another, JS uses "dictionary" or "lexicographical" order.
+Strings are compared letter-by-letter, using unicode order, so lowercase 'a' has a greater value than uppercase 'A'.
+
+    alert( 'Z' > 'A' ); // true
+    alert( 'Glow' > 'Glee' ); // true
+    alert( 'Bee' > 'Be' ); // true
+
+It works as follows:
+
+1. Compare first letter of both strings
+2. If the first character of the first string is greater / lesser than the others, then stop.
+3. If both first characters are the same, compare the second characters.
+4. Repeat until the end of string.
+5. If both strings have the same length, they are equal. If not, they are greater.
+
+* Comparing different types
+
+When comparing different types, JS converts values to numbers.
+
+    alert( '2' > 1 ); // true, string is converted to number
+    alert( '01' == 1 ); // true, '01' becomes number 1
+
+For booleans, true is 1 and false is 0.
+
+    alert( true == 1 );
+    alert( false == 0 );
+
+* Strict equality
+
+Regular equality cannot differentiate 0 from false.
+This happens because operands of different types are converted to numbers with the operator ==
+
+A strict equality operator === checks the equality without type conversion.
+If a and b are of different types, then it always returns false.
+
+    alert ( 0 === false );
+
+The same goes for strict non-equality operator !==
+
+* Comparing null and undefined
+
+For a strict equality check ===, null === undefined will return false.
+For a non-strict check they will return true.
+
+    alert ( null === undefined ); // false
+    alert ( null == undefined ); // true
+
+When null and undefined are converted to numbers, null becomes 0 and undefined becomes NaN.
+This causes some strange behaviour, because in JS == is a different process to >, <, >=, <=
+
+> and < convert null to 0, whereas == does not, meaning that null == undefined returns true but nothing else.
+
+    alert ( null > 0 ); // false
+    alert ( null == 0 ); // false
+    alert ( null >= 0 ); // true
+
+Undefined always returns false no matter what, because it represents NaN.
+
+Tip: be careful with undefined / null except with the strict equality ===
+
+5 > 4 // true
+"apple" > "pineapple" // false
+"2" > "12" // false
+undefined == null // true
+undefined === null // false
+null == "\n0\n" // false
+null === +"\n0\n" // false
+
+* W3SCHOOLS - IF, ELSE, ELSE IF *
+
+* Very often when you write code, you want to perform different actions for different decisions.
+
+You can use the following conditional statements for this:
+
+    - if
+    - else
+    - else if
+    - switch
+
+if executes if the condition is true, else executes if the same condition is false
+else if specifies a new condition to test, if the first is false
+switch specifies many blocks of code that can be executed (to avoid a long chain)
+
+* if statement
+
+    if (hour < 18) {
+        greeting = "Good day"';
+    }
+
+* else statement
+
+    if (hour < 18) {
+        greeting = "Good day";
+    } else {
+        greeting = "Good evening";
+    }
+
+* else if statement
+
+    if (time < 10) {
+        greeting = "Good morning";
+    } else if (time < 20) {
+        greeting = "Good day";
+    } else {
+        greeting = "Good evening";
+    }
+
+* JAVASCRIPT.INFO - LOGICAL OPERATORS *
+
+* There are four logical operators in JS.
+|| (OR), && (AND), ! (NOT)
+Also ?? (Nullish Coalescing)
+
+* || "OR" is two vertical lines
+
+    alert ( true || true );
+    alert ( false || true );
+    alert ( true || false);
+    alert ( false || false );
+
+The result is always true unless both operands are false.
+
+    let hour = 9;
+    let isWeekend = true;
+    
+    if (hour < 10 || hour > 18 || isWeekend) {
+        alert( "The office is closed." );
+    }
+
+Different to classical logic though, JS converts other data types into Booleans.
+
+    alert ( 1 || 0 ); // true
+    alert ( null || 0 || 1 ); // true
+    alert ( undefined || null || 0 ); // false
+
+A list of variables and expressions can be defined as true or false.
+Here || chooses the first variable that has data, or if there is no data then "Anonymous" is set.
+
+    let firstName = "";
+    let lastName = "";
+    let nickName = "SuperCoder";
+
+    alert (firstName || lastName || nickName || "Anonymous"); // SuperCoder
+
+Short-circuit evaluation also means that || processes arguments until the first truthy value is reached, and the value is returned immediately.
+This is useful if the operand isn't just a value but perhaps an expression or a function call.
+
+    true || alert("not printed");
+    false || alert("printed");
+
+* && "AND" operator is two ampersands
+
+    alert ( true && true ); // true
+    alert ( false && true ); // false
+    alert ( true && false ); // false
+    alert ( false && false ); // false
+
+Using an if statement:
+
+    let hour = 12;
+    let minute = 30;
+    
+    if (hour == 12 && minute == 30) {
+        alert( 'The time is 12:30' );
+    }
+
+Any value is allowed as an operand of AND:
+
+    if (1 && 0) {
+        alert( "won't work, because the result is false" );
+    }
+
+AND finds the first false value, and returns the original value of the operand (the first false value).
+If they are all true, it returns the last operand.
+
+    result = value1 && value2 && value3;
+
+    alert( 1 && 0 ); // 0
+    alert( 1 && 5 ); // 5
+    alert( 1 && 2 && null && 3 ); // null
+    alert( 1 && 2 && 3 ); // 3
+
+People can use && as a shorter way to write 'if'
+Generally it is better to use 'if' rather than AND, for readability.
+
+* ! "NOT" is written using an exclamation mark
+
+    result = !value;
+
+It can be used to convert an operand to a boolean, and also return the inverse value.
+
+    alert( !true ); // false
+    alert( !0 ); // true
+
+A double !! can be used to convert a value to a boolean.
+
+    alert( !!"non-empty string" ); // true
+    alert( !!null ); // false
+
+Likewise you can also express this through:
+
+    alert( Boolean("non-empty string") ); // true
+    alert( Boolean(null) ); // false
+
+Tasks
+
+    alert( null || 2 || undefined ); // true
+
+    alert( alert(1) || 2 || alert(3) ); // true
+
+    alert( alert(1) && alert(2) ); // false
+
+    alert( null || 2 && 3 || 4 ); // true
+
+    let age = 26;
+
+    if (age >= 14 || age <= 90) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+
+V1. 
+    if (!(age >= 14 && age <= 90))
+    
+V2.
+    let age = 13;
+
+    if (age <= 14 || age >= 90) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+
+Operator && has higher precedence than ||
+Negative numbers also count as true booleans.
+
+* MOZILLA ARTICLE - CONDITIONALS *
+
+* Basic if...else syntax
+
+    if (condition) {
+        // condition 1
+    } else {
+        // condition 2
+    }
+
+If condition is true run code A, else run code B.
+
+OR
+
+    if (condition) {
+        // condition 1
+    }
+        // condition 2
+
+In this case, the following code will always run because it is not within the if statement.
+
+It is also possible to write if statements without curly braces, but it is not recommended.
+
+An example, "(parent) if you help me with the shopping then you (child) get a larger allowance, if not you get a smaller allowance".
+
+    let shoppingDone = false;
+    let childsAllowance;
+
+    if (shoppingDone === true) {
+        childsAllowance = 10;
+    } else {
+        childsAllowance = 5;
+    }
+
+You can chain extra choices using else if.
+
+* Nesting if...else
+
+let choice = "sunny";
+let temperature = 90;
+
+    if (choice === "sunny" {
+        if (temperature < 86) {
+            textContent = `It is ${temperature} degrees outside - nice and sunny!`
+        } else if (temperature >= 86) {
+            textContent = `It is ${temperature} degrees outside - REALLY HOT!`
+        }
+    }
+
+* Switch statements
+
+    switch (expression) {
+        case choice1:
+            break;
+
+        case choice2:
+            break;
+
+        default:
+            break;
+    }
+
+This consists of:
+    1. The keyword 'switch', followed by parantheses.
+    2. An argument inside the parenthesis.
+    3. The keyword 'case' followed by a choice that the value could be.
+    4. Some code to run if the choice matches.
+    5. A break statement, for the code to stop executing if the value matches.
+    6. More cases.
+    7. The keyword 'default' if none of the choices match.
+
+* Ternary operator
+
+A ternary operator is a small bit of syntax that tests a condition and returns one value if true and another if false.
+In pseudocode:
+
+    condition ? run this code : run this code instead
+
+    const greeting = isBirthday
+        ? "Happy birthday Mrs. Smith!"
+        : "Good morning Mrs. Smith.";
+
+If isBirthday is true, we give our guest a happy birthday, if not we give her a standard greeting.
+
+    let accessAllowed = ( age > 18 ) ? true : false;
+
+* Multiple ternaries
+
+    let age = prompt("Age?", 18)
+    
+    let message = (age < 3) ? 'Hi, baby!' :
+        (age < 18) ? 'Hello!' :
+        (age < 100) ? 'Greetings!' :
+        'What an unusual age!';
+
+1. The first question mark checks whether age < 3.
+2. If true, it returns a value, else, it continutes to check if age < 100.
+3. If that's true it returns a value, else it continues to the expression after the last colon.
+
+The question mark operator can be used as a replacement for 'if'.
+However it's not recommended to use it that way because it is less readable.
+
+    let company = prompt('Which company created JavaScript?', '');
+    
+    (company == 'Netscape') ?
+        alert('Right!') : alert('Wrong.');
+
+* JAVASCRIPT.INFO - SWITCH STATEMENTS *
+
+    let a = 2 + 2;
+
+    switch (a) {
+        case 3:
+            alert( 'Too small' );
+            break;
+        case 4:
+            alert( 'Exactly!' );
+            break;
+        case 5:
+            alert( 'Too big' );
+            break;
+        default:
+            alert( "I don't know such values" );
+    }
+
+Both switch and case allow arbitrary expressions.
+In this case it means converting between types.
+
+    let a = "1";
+    let b = 0;
+
+    switch (+a) {
+        case b + 1:
+            alert("This runs because +1 is 1, which exactly equals b+1");
+            break;
+
+        default:
+            alert("This doesn't run!")
+    }
+
+Cases can be grouped together.
+
+    case 4:
+        alert('Right'!);
+
+    case 3:
+    case 5:
+        alert('Wrong!');
+        alert("Go take a maths class!");
+        break;
+
+    default:
+        alert('This result is very strange.');
+
+The equality check is always strict for switch statements.
+So if you are checking against a string value, then a number case will not execute.
+
+Tasks:
+
+1.
+    if (browser == 'Edge') {
+        alert ("You've got the Edge!");
+    } else if (browser == 'Chrome' 
+    || browser == 'Firefox' 
+    || browser == 'Safari' 
+    || browser == 'Opera') {
+        alert ("Okay we support these browsers too");
+    } else {
+        alert ("We hope this page looks okay!");
+    }
+
+2.  let a = +prompt('a?', '');
+        
+    switch (a) {
+        case 0:
+            alert(0);
+            break;
+
+        case 1:
+            alert(1);
+            break;
+
+        case 2:
+        case 3:
+            alert('2, 3');
+            break;
+
+        default:
+            alert('Unknown number!');
+            break;
+    }
