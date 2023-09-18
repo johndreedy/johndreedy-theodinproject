@@ -97,4 +97,8 @@ If there are too many imported files, it is worth merging them into one or two.
 
 * Juniors rely on comments to tell the story when it should be code.
 
+<<<<<<< HEAD
 * If your code is too complex to understand without comments then it probably needs refactoring.
+=======
+* If your code is too complex to understand without comments then it probably needs refactoring
+>>>>>>> 8f689d81a544d8672363eff395871b5ed68cc44d
