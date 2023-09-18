@@ -21,11 +21,7 @@ Types of errors:
 	- Reference errors occur when you are trying to access a variable that doesn't exist within the current scope
 	- Type errors occur when an argument passed to a function / operator is incompatible with the type expected from that function / operator
 
-<<<<<<< HEAD
 For example using .push() for strings rather than .concat(), or instead changing the variable type to an array.
-=======
-For example using .push() for strings rather than .concat(), or instead changing the variable type to an array
->>>>>>> 8f689d81a544d8672363eff395871b5ed68cc44d
 
 * How to resolve errors:
 	- Read it carefully and try to understand it
@@ -33,8 +29,4 @@ For example using .push() for strings rather than .concat(), or instead changing
 	- Use the debugger, where you can set breakpoints and view the value of any given variable
 	- Make use of the console with console.log()
 
-<<<<<<< HEAD
 * Many people see warnings and treat them as errors, which are not significant and should be treated as valid suggestions.
-=======
-* Many people see warnings and treat them as errors, which are not significant and should be treated as valid suggestions
->>>>>>> 8f689d81a544d8672363eff395871b5ed68cc44d

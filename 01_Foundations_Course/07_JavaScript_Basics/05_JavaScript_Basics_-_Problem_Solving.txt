@@ -92,11 +92,7 @@ The best way to solve a problem is to explain it in plain English.
     ELSE,
         Add it to the balance"
 
-<<<<<<< HEAD
-Identifying the core logic of a problem is why working in pseudocode is so useful
-=======
 Identifying the core logic of a problem is why working in pseudocode is so useful.
->>>>>>> 8f689d81a544d8672363eff395871b5ed68cc44d
 
 For the above problem this could start with:
 
