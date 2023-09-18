@@ -1,0 +1,324 @@
+* Imagine taking one of your scripts and bundling it into a little package that you could reuse over and over again.
+
+That's the power of functions in JavaScript.
+
+* MOZILLA ARTICLE - FUNCTIONS - REUSABLE BLOCKS OF CODE *
+
+* A function does a single task inside a defined block, and then calls that code whenever you need it using a short command.
+
+* If you make use of a structure in JS that features parentheses () - and you're not using for, while, do...while, 
+if...else, etc, then you are making use of a function.
+
+* We have used functions built into the browser before.
+
+    const myText = "I am a string";
+    const newString = myText.replace("string", "sausage");
+    console.log(newString)
+
+Or in an array:
+
+    const myArray = ["I", "love", "chocolate", "frogs"];
+    const madeAString = myArray.join(" ");
+    console.log(madeAString);
+
+Or every time we generate a random number:
+
+    const myNumber = Math.random();
+
+Some of the code you call when you invoke a built-in browser function is actually written in background browser code,
+mainly low-level languages like C++ (and not JS).
+
+Some browser functions are not part of the core JS language and are instead defined as part of browser APIs, which
+build on the default JS language.
+
+* Functions vs Methods
+
+Functions that are part of objects are called methods.
+
+The built-in code we've made use of so far comes in both forms, functions and methods.
+A method is defined in relation to an object, whereas a function does not require one.
+
+Any time you see a custom name with a parentheses straight after it, you are using a custom function.
+
+* Invoking functions
+
+To actually use a function after it has been defined, you have to run - or invoke - it.
+This is done by including the name of the function, followed by parentheses.
+
+    function myFunction() {
+        alert("hello");
+    }
+
+* Function parameters
+
+Some functions require parameters to be specified when you are invoking them. 
+These are values that need to be included inside the function parentheses, to do its job properly.
+
+For example, Math.random() doesn't require any parameters and returns a random number between 0 and 1.
+
+    const myNumber = Math.random();
+
+Whereas the browser's built-in replace() function requires two parameters, the substring to find in the main string,
+and the substring to replace that string with.
+
+    const myText = "I am a string";
+    const newString = myText.replace("string", "sausage");
+    console.log(newString)
+
+Sometimes parameters are optional and you don't have to specify them.
+If you don't then the function will adopt some kind of default behaviour.
+For example, the join() function parameter is optional (to join arrays), if no parameter is included then a comma is used by default.
+
+    const myArray = ["I", "love", "chocolate", "frogs"];
+    const madeAString = myArray.join(" ");
+    console.log(madeAString);
+
+OR
+
+    const madeAnotherString = myArray.join();
+    console.log(madeAnotherString);
+
+If you're writing a function and want to specify default parameters, you can specify default values by adding = after the parameter name.
+
+    function hello(name = "John") {
+        console.log(`Hello ${name}!`);
+
+    hello("Ari");
+    hello();
+
+* Anonymous functions
+
+You can also create functions that have no name, known as an anonymous function, for example:
+
+    (function () {
+        alert("hello");
+    });
+
+You'll often see anonymous functions when a function expects to receive another function as a parameter.
+In this case the function parameter is often passed as anonymous.
+
+Here's an example that calls a function when a user presses a key, passing to another function containing infomation about the event:
+
+    function logKey(event) {
+        console.log(`You pressed "${event.key}".`);
+    }
+
+    textBox.addEventListener("keydown", logKey);
+
+Instead of defining a separate logKey() function, you can pass an anonymous function into addEventListener():
+
+    textBox.addEventListener("keydown", function (event) {
+        console.log(`You pressed "${event.key}".`);
+    });
+
+If you pass an anonymous function like this, there's an alternate form you can use called an arrow function.
+
+You write it as:
+
+    textBox.addEventListener("keydown", (event) => {
+        console.log(`You pressed "${event.key}".`);
+    });
+
+If the function only takes one parameter you can omit the brackets around (event)
+
+If your function only contains one line that's a return statement, you can omit the braces and return keyword, implicitly returning it.
+
+For example:
+
+    const originals = [1, 2, 3];
+
+    const doubled = originals.map(item => item * 2);
+
+    console.log(doubled);
+
+map() takes each item in the array and passes it into the function, before taking the value returned and adding it to a new array.
+
+* Function scope and conflicts
+
+Scope is an important concept when dealing with functions.
+Variables inside a function are defined within their own separate scope.
+The top level outside of functions is called 'global scope'.
+
+JS is set up this way so not all variables are accessible everywhere in the code, which could be affected by external scripts.
+
+For example, there could be an HTML file that is calling in two external JS files, both containing a variable and function of the same name.
+
+    // first.js
+    const name = "Chris";
+    function greeting() {
+      alert(`Hello ${name}: welcome to our company.`);
+    }
+
+    // second.js
+    const name = "Zaptec";
+    function greeting() {
+      alert(`Our company is called ${name}.`);
+    }
+
+Both functions are called greeting() but it will only access the first file's function, the second is ignored.
+
+Mozilla Article exercise - generate a random name from list:
+
+    const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
+
+    function chooseName() {
+        indexMin = 0;
+        indexMax = names.length - 1;
+        randomIndex = Math.floor(Math.random() * (indexMax - indexMin + 1)) + indexMin;
+        randomName = names[randomIndex];
+        console.log(randomName);
+    }
+
+  chooseName();
+
+* MOZILLA ARTICLE - FUNCTION RETURN VALUES *
+
+* There is one last essential concept about functions, return values.
+
+* Return values are what they sound like - values that a function returns when it is executed.
+
+    const myText = "The weather is cold";
+    const newString = myText.replace("cold", "warm");
+    console.log(newString);
+
+Here replace() is used with myText and passed two parameters:
+	- The substring to find ("cold")
+	- The string to replace it with
+
+Some functions don't return any value (which would be considered void or undefined).
+
+Generally a return value is used where the function is an intermediate step of a calculation.
+You want to get a final result, which involves some values that need to be calculated by a function.
+
+    function random(number) {
+      return Math.floor(Math.random() * number);
+    }
+
+Some extra tips:
+	- It is recommended to add some error handling to functions to check that they are validated
+	- It is useful to consider creating a "function library", for functions that you repeat over and over
+
+* BACK TO THEODINPROJECT *
+
+    function favoriteAnimal(animal) {
+    return animal + " is my favorite animal!"
+    }
+
+    console.log(favoriteAnimal('Goat'))
+
+Parameters are the items listed in parentheses when passing the function.
+In this instance, 'animal' which is a placeholder for a future value.
+
+By calling favoriteAnimal() inside of console.log(), we get the return value printed to the console.
+It is normal to pass function calls as arguments.
+
+* JAVASCRIPT.INFO ARTICLE - FUNCTIONS * 
+
+* We have already seen examples of functions such as alert(message), prompt(message, default), confirm(question).
+
+* Local variables are declared only inside that function.
+* Global variables are declared outside the function.
+
+* If a same-named variable is declared inside the function then it shadows the outer one.
+
+* If a function is called but an argument is not provided then the value becomes undefined.
+
+We can specify the default value within the function argument itself.
+
+    function showMessage(from, text = "no text given") {
+        alert( from + ": " + text );
+    }
+
+    showMessage("Ann"); // Ann: no text given
+
+This is also the case if the parameter is equal to undefined.
+
+It can also be a more complex expression involving a function
+
+    function showMessage(from, text = anotherFunction()) {
+        // anotherFunction() only executed if no text given
+        // its result becomes the value of text
+    }
+
+In previous JS versions, syntax for default parameters wasn't supported.
+For this reason, nowadays we can still come across alternative ways of defining them in older code.
+
+    function showMessage(from, text) {
+        if (text === undefined) {
+        text = 'no text given';
+        }
+
+        alert( from + ": " + text );
+    }
+
+* Return values - never add a new line between return and the value.
+
+* One function - one action.
+
+A function should do what is suggested by its name and nothing more.
+Two independent actions usually deserve two functions.
+
+There should be a focus on "pure" functions, for example checkPermission would be bad if it also displays the access granted / denied message.
+It should only return the result.
+
+* JAVASCRIPT.INFO ARTICLE - FUNCTION EXPRESSIONS * 
+
+A common form of syntax for functions in JS is function declarations.
+
+    function sayHi() {
+        alert( "Hello" );
+    }
+
+However there is another form called function expressions. This allows us to create a new function in the middle of a declaration.
+There is no name after the function keyword, which is allowed in function expressions.
+
+    let sayHi = function() {
+        alert( "Hello" );
+    };
+
+* No matter how the function is created, a function is a value. Functions can be stored in variables.
+
+* We can print out this value using an alert
+
+    alert( sayHi );
+
+This does not run the function because there are no parentheses, eg. alert ( sayHi() );
+
+Since functions are values, we can copy them into other variables.
+Function expressions require semicolons at the end, because they are part of an assignment statement.
+
+A function declaration is a separate statement, whereas a function expression is created on the right side of an assignment expression.
+Function declarations are visible in the entire script no matter where they are; a function expression is created when the execution reaches it.
+
+* JAVASCRIPT.INFO ARTICLE - ARROW FUNCTIONS *
+
+There is another form of concise syntax for creating functions, known as arrow functions.
+
+    let sum = (a, b) => a + b;
+    alert( sum(1, 2) ); // 3
+
+Here the function accepts two arguments, a and b. Afterwards it evaluates the expression a + b and returns the result.
+
+With one argument:
+
+    let double = n => n * 2;
+    alert( double(3) ); // 6
+
+With no arguments:
+
+    let sayHi = () = alert("Hello!");
+    sayHi();
+
+* JAVASCRIPTTUTORIAL.NET - JS CALL STACK *
+
+* The JS Call Stack is a mechanism to keep track of function calls.
+
+It has the information about what function is currently being run and what functions are invoked from that function.
+
+When you execute a script, JS creates a global execution content and pushes it on top of the call stack.
+When a function is called, JS creates a function execution context, pushes it on top of the call stack, and starts executing it.
+
+There is a hierarchy of functions that are invoked, and new functions that are called within functions are added to the top.
+
+The call stack has a fixed size depending on the environment (web or Node.js)
+If the number of execution contexts exceeds the size of the stack, a stack overflow error will occur.
