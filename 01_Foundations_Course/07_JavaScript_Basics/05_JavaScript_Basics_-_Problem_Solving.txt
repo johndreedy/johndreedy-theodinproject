@@ -1,0 +1,101 @@
+* Problem solving is the core thing that developers do, ranging from small exercises up to building a site like Facebook
+
+* In the context of programming, problem solving can be defined as "writing an original program that performs a particular set of tasks and meets all stated constraints".
+
+* Each problem has its own constraints, for example scalability or performance won't matter in an exercise but are vital in developing an app.
+
+* New programmers find themselves breezing through programming concepts but struggling to code something on their own.
+
+1. The first step to solving a problem is understanding what it is.
+If you don't understand, you won't know when you've successfully solved it. 
+You can do this by writing it on paper in plain English until it makes sense.
+
+2. Now you know what you're trying to solve, it's important to plan out how you will solve it.
+This could include questions like:
+
+	- Does your program have a user interface? What functionality will it have?
+	- What inputs does the program have?
+	- What is the desired output?
+	- What are the steps necessary to return the desired output from your input?
+
+3. Pseudocode
+Pseudocode helps you write out the logic of your code in natural language which helps you to slow down and think through the steps your program will go through.
+
+	"When the user inputs a number
+	Initialize a counter variable and set its value to zero
+	While counter is smaller than user inputted number increment the counter by one
+	Print the value of the counter variable"
+
+4. Divide and Conquer
+This means identifying subproblems of larger problems you're solving. Each step in an algorithm can be considered a subproblem.
+You may not know all the steps you need upfront, so your algorithm may be incomplete.
+
+If your problem is sufficiently complex, don't solve it all in one go. You'll get yourself tied up in knots.
+In short - break down bigger problems into smaller problems and solve each.
+
+5. Solving Fizz Buzz
+
+	"Write a program that allows the user to enter a number, print each number between one and the number the user entered, but for numbers that divide by 3 without a remainder print Fizz instead. 
+	For numbers that divide by 5 without a remainder print Buzz and finally for numbers that divide by both 3 and 5 without a remainder print FizzBuzz."
+
+Things to consider:
+	- How will the user enter the number?
+	- How will you loop the entered number?
+	- How will you know it is divisible by 3 or 5 or both with no remainder?
+
+Pseudocode:
+
+	"When a user inputs a number
+	Loop from 1 to the entered number
+	If the current number is divisible by 3 then print "Fizz"
+	If the current number is divisible by 5 then print "Buzz"
+	If the current number is divisible by 3 and 5 then print "FizzBuzz"
+	Otherwise print the current number"
+
+Solution:
+
+let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
+
+    for (let i = 1; i <= answer; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
+        }
+    }
+
+* ARTICLE - FREECODECAMP - HOW TO THINK LIKE A PROGRAMMER * 
+
+* Problem solving is a meta-skill.
+It can seem random unless you have a system of doing so.
+
+Just using trial and error generally will waste time.
+
+The best way to solve a problem is to explain it in plain English.
+
+* ARTICLE - VIKING CODE SCHOOL - WHAT IS PSEUDO-CODING? *
+
+* Pseudo-coding is writing down the logic of your solution in plain English
+
+* Pseudo-coding is important because it focuses on the building block concepts of programming languages without having to use the "right" words or syntax
+
+* It essentially is a scaffold for a solution you will implement later
+
+"WHEN the user inputs money:
+    IF the bill is too crumpled to read,
+        provide an error message,
+        and return the bill.
+    ELSE,
+        Add it to the balance"
+
+Identifying the core logic of a problem is why working in pseudocode is so useful.
+
+For the above problem this could start with:
+
+"Record the money being inputted;
+Dispense the item if able to;
+Handle any cancellation requests;"
