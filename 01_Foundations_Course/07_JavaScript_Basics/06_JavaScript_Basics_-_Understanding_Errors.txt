@@ -1,0 +1,32 @@
+* Reading and understanding errors is a requirement as a developer
+Being able to parse them without fear will enable you to debug your applications.
+
+* An error is a type of object built into the JS language that contain crucial information in locating code responsible for an error
+
+    const a = "Hello";
+    const b = "World";
+
+    console.log(c);
+
+* A ReferenceError is thrown when a variable is not declared or initialised within the current scope.
+
+   "'c' is not defined"
+
+Understanding the error type and error message is important to understand why you are receiving it.
+The next part of the error gives the name of the file you can find the error in.
+The final part of the error is the stack trace, which helps you understand when the error was thrown in the application and what functions led up to it.
+
+Types of errors:
+	- Syntax errors occur when the code you are trying to run is not written correctly
+	- Reference errors occur when you are trying to access a variable that doesn't exist within the current scope
+	- Type errors occur when an argument passed to a function / operator is incompatible with the type expected from that function / operator
+
+For example using .push() for strings rather than .concat(), or instead changing the variable type to an array
+
+* How to resolve errors:
+	- Read it carefully and try to understand it
+	- Google it, StackOverflow could be helpful
+	- Use the debugger, where you can set breakpoints and view the value of any given variable
+	- Make use of the console with console.log()
+
+* Many people see warnings and treat them as errors, which are not significant and should be treated as valid suggestions

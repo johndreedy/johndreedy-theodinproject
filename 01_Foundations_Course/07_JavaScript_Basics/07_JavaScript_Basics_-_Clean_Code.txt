@@ -1,0 +1,100 @@
+* You may think that most of a dev's work is writing code
+However, in reality, a great amount of time is reading code.
+
+This includes code that is written by other team members, people no longer on your team, and even code you yourself wrote.
+
+Everyone writes messy code sometimes, even professionals.
+The more you write code, the better it will become, in terms of readability and other aspects.
+
+* One way of writing readable code is using clear names for variables and functions:
+It is useful to imagine you are collaborating on a project with someone, who is only using single-letter variables and inconsistent indentation.
+How long will you take to decipher what is going on so you can continue with your work?
+
+Whereas if you use readable names, while you may not know what each part does, it is much easier to guess what is happening.
+This includes using camelCase to improve readability.
+
+* Using a consistent vocabulary is importing in naming.
+For example, getPlayerScore(), getPlayerName(), getPlayerTag() instead of getUserScore(), fetchPlayerName(), retrievePlayer1Tag()
+
+Variables should always begin with a noun or adjective, and functions should generally be verbs.
+
+* Use searchable and immediately understandable names.
+
+Avoid using undeclared variables when more descriptive variables can be used.
+If the variable is a constant then it is worth capitalising it.
+
+* Indentation length
+
+There is a "war" between coders who use tabs and coders who use spaces.
+It doesn't matter which you choose, but it matters that you are consistent.
+
+* Line length
+
+Generally your code will be easier to read if you manually break lines that are longer than around 80 characters.
+
+It is also important to generally use semicolons so it doesn't lead to bugs later down the line.
+
+* Comments
+
+Comments are an important descriptive tool, however it might be tempting to have comments to explain everything, which is not good practice.
+
+Also don't comment when you should be using Git.
+And likewise don't comment out useless functions that should probably be deleted.
+
+* Why, not how
+
+It is important to comment on code in a way which describes why in the broader context rather than just saying what it does, eg. the reasons behind a piece of code.
+
+* ARTICLE - ONEXTRAPIXEL - 10 PRINCIPLES FOR KEEPING YOUR CODE CLEAN *
+
+1. Revise your logic before coding
+Before blindly typing, create some flow diagrams or written pseudo-code to verify the logic.
+This may clarify doubts about functionality and save time.
+
+2. Clearly expose the structure of the page.
+Use main containers with representative ID.
+
+3. Use correct indentation
+If every line of code is glued to the left side of the screen, it'll be very hard to distinguish where an element is closed.
+
+4. Write explanatory comments
+Comments can be read at a moment of doubt to elucidate what / why something is happening.
+
+5. Avoid abusing comments
+For example:
+	- Writing notes to self
+	- Blaming other people
+	- Writing vague statements
+
+Instead write:
+	- Authoring specifications
+	- Detailed statements on functionality
+	- Quick notifications / labels on a recent change
+
+6. Avoid large functions
+It is better to break up large functions into smaller ones. The team could make better use of smaller, repeatable functions.
+
+7. Naming standards for functions and variables
+Laziness in naming conventions can double the time it takes to do future redesigns. It is better to standardise.
+
+8. Treat changes with caution
+When something needs to be changed, it's important to be aware of trying not to meddle with code that is already clean and ordered.
+For example keeping indentations, adding comments / expanding previous ones, and respecting standards.
+
+9. Avoid mixing of coding languages
+Don't include CSS or JS in your HTML, especially where other external files are already included.
+
+10. Summarise your importants
+If there are too many imported files, it is worth merging them into one or two.
+
+* BLOG - CODING HORROR *
+
+* Coding without comments *
+
+* It's not enough to tell you how code works, we need the comments to tell us why it works.
+
+* Better yet, you should write your code as if comments didn't exist.
+
+* Juniors rely on comments to tell the story when it should be code.
+
+* If your code is too complex to understand without comments then it probably needs refactoring
