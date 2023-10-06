@@ -1,0 +1,367 @@
+* One of the challenges of programming is dealing with large amounts of data
+
+Here we'll use arrays, loops, and test-driven development (TDD).
+
+* W3SCHOOLS ARTICLE - JS ARRAYS *
+
+* An array is a variable that can hold more than one value.
+
+    const cars = ["Saab", "Volvo", "BMW"];
+
+* Storing the cars in single variables could look like this:
+
+    let car1 = "Saab";
+    let car2 = "Volvo";
+    let car3 = "BMW";
+
+If you want to loop through the cars and find a specific one, or you have a high number of cars, then the solution is an array.
+
+* An array literal looks like this:
+
+    const cars = ["Saab", "Volvo", "BMW"];
+
+A declaration can span multiple lines.
+
+* You can also create an array and set the elements.
+
+    const cars = [];
+    cars[0] = "Saab";
+    cars[1] = "Volvo";
+    cars[2] = "BMW";
+
+* The keyword 'new' also creates an array:
+
+    const cars = new Array("Saab", "Volvo", "BMW");
+
+For simplicity and readability array literals are much better.
+
+* Accessing array elements
+
+You can access an array element with an index number.
+
+    const cars = ["Saab", "Volvo", "BMW"];
+    let car = cars[0];
+
+* Changing an array element
+
+    const cars = ["Saab", "Volvo", "BMW"];
+    cars[0] = "Opel";
+
+* Converting an array to a string
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo").innerHTML = fruits.toString();
+
+* Arrays are objects
+
+Arrays are a special type of object.
+The typeof operator in JS returns "object" for arrays.
+
+Objects use names to access its members.
+
+   const person = {firstName:"John", lastName:"Doe", age:46};
+
+The real strength of JS Arrays are the built-in array properties and methods.
+
+    cars.length
+    cars.sort()
+
+* Accessing the last array element
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let fruit = fruits[fruits.length - 1];
+
+* Looping array elements
+
+    for (let i=0; i < 10; i++)
+
+OR
+
+    fruits.forEach(myFunction);
+
+* Adding array elements
+
+    fruits.push("Lemon");
+
+Adding an element with high indexes will create undefined "holes" in the array.
+
+In JS arrays only use numbered indexes.
+
+Objects use named indexes.
+
+    person["firstName"] = "John";
+    person["lastName"] = "Doe";
+    person.length; // returns 0
+    person[0]; // returns undefined
+
+* How to recognise an array
+
+One way is using Array.isArray(fruits);
+
+Another is using instanceof which will return true
+
+    const fruits = ["Banana", "Orange", "Apple"];
+    fruits instanceof Array;
+
+* W3SCHOOLS ARTICLE - JS ARRAY METHODS * 
+
+* Array length
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let size = fruits.length;
+
+* Array to string
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const fruitsString = fruits.toString();
+    console.log(fruitsString);
+
+OR
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const fruitsString = fruits.join(" * ");
+    console.log(fruitsString);
+
+* Popping and pushing
+
+You can pop items out of an array or push items into an array.
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.pop();
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.push("Kiwi");
+
+* Shifting elements
+
+The shift method removes the first array element and shifts the other elements to a lower index.
+It returns the value that was "shifted out".
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let fruit = fruits.shift();
+
+The unshift method adds a new element to an array at the beginning.
+It returns the new array length.
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.unshift("Lemon");
+
+* Changing elements
+
+Array elements are accessed using their index number.
+Array length can be found with .length
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits[0] = "Kiwi";
+
+* Array delete()
+
+Operator delete can be used with arrays however it leaves undefined holes in the array.
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    delete fruits[0];
+
+* Merging / concatenating arrays
+
+concat() creates a new array by merging existing arrays.
+
+    const myGirls = ["Cecilie", "Lone"];
+    const myBoys = ["Emil", "Tobias", "Linus"];
+
+    const myChildren = myGirls.concat(myBoys);
+
+OR
+
+    const arr1 = ["Emil", "Tobias", "Linus"];
+    const myChildren = arr1.concat("Peter"); 
+
+* Flattening an array
+
+flat() creates a new array with sub-array elements concatenated to a specified depth.
+
+    const myArr = [[1,2],[3,4],[5,6]];
+    const newArr = myArr.flat();
+
+* Splicing and slicing arrays
+
+* splice()
+
+Splice adds new items to an array.
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.splice(2, 0, "Lemon", "Kiwi");
+
+The first parameter determines where new elements should be added.
+The second determines how many elements should be removed.
+
+You can use splice() to remove elements without leaving holes in the array.
+
+* slice()
+
+The slice() method slices out a piece of an array into a new array.
+
+    const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    const citrus = fruits.slice(1); // Orange
+
+It does not remove any elements from the original array.
+
+slice() can also take two arguments.
+If the end argument is omitted it slices out the rest of the array.
+
+* MOZILLA ARTICLE - LOOPING CODE "
+
+Programming languages are useful for repetitive tasks, and loops are ideal for such needs.
+Loops are about doing the same thing over and over, sometimes with variations or variables for each loop.
+
+* Looping through a collection
+
+Usually when you use a loop, you have a collection of items and want to do something to every item.
+
+* for...of loop
+
+    const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+    for (const cat of cats) {
+        console.log(cat);
+    }
+
+1. Get the first item in collection from 'cats'
+2. Assign it to variable 'cat' and then run the code between {}
+3. Get the next item, and repeat until end of collection
+
+* map() and filter()
+
+You can use map() to do something to each item in a collection and create a new collection with the changed items.
+
+    function toUpper(string) {
+        return string.toUpperCase();
+    }
+
+    const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+    const upperCats = cats.map(toUpper);
+
+    console.log(upperCats);
+
+You can use filter() to test each item in a collection and create a new collection with only the matching items.
+
+    function lCat(cat) {
+        return cat.startsWith("L");
+    }
+
+    const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+    const filtered = cats.filter(lCat);
+
+    console.log(filtered);
+
+The function we pass in returns a boolean, if true the item is included in the new array.
+
+* The standard for loop
+
+    for (initialiser; condition; final-expression) {
+        // code to run
+    }
+
+1. Initialiser, a number to set
+2. Condition, when the loop should stop looping
+3. A final-expression, to be evaluated each time the loop is run
+
+You can use a for loop instead of a for...of loop:
+
+    const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+    for (let i = 0; i < cats.length; i++) {
+        console.log(cats[i]);
+    }
+
+* Exiting loops with a break
+
+You can exit a loop with 'break' before all the iterations have been completed.
+The break statement immediately exits the switch statement and moves on to the code after it.
+
+* Skipping iterations with continue
+
+Continue works similarly to break, but instead of exiting the loop it skips to the next iteration of the loop.
+This is useful to prevent nesting lots of 'if' statements.
+
+* while and do...while
+
+There are many other types of loop in JS which are worth having a look at.
+
+    initializer
+    while (condition) {
+        final-expression
+    }
+
+Instead of the for loop, the initialiser is set before the loop.
+The final-expression is included inside the loop instead of inside the parentheses.
+
+The do...while loop is also similar.
+
+    initializer
+    do {
+        final-expression
+    } while (condition)
+
+The keyword precedes the curly braces here, containing the code to run and the final expression.
+
+In a do...while loop the code is always executed at least once, whereas in while and for loops the code may never be executed.
+
+With while loops it is important that the initialiser is incremented so the condition eventually becomes false.
+
+* JAVASCRIPT.INFO ARTICLE - LOOPS: WHILE AND FOR *
+
+* We often need to repeat actions, for example outputting goods from a list one after another or outputting the same code.
+
+* while loop
+
+    let i = 0;
+    while (i < 3) { // shows 0, then 1, then 2
+        alert( i );
+        i++;
+    }
+
+* do...while loop
+
+    let i = 0;
+    do {
+        alert( i );
+        i++;
+    } while (i < 3);
+
+* for loop
+
+    for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+        alert(i);
+    }
+
+We can omit begin if we don't need anything at the loop start.
+
+    let i = 0; // we have i already declared and assigned
+
+    for (; i < 3; i++) { // no need for "begin"
+        alert( i ); // 0, 1, 2
+    }
+
+We can also remove step.
+
+    let i = 0;
+
+    for (; i < 3;) {
+        alert( i++ );
+    }
+
+* Labels for break/continue
+
+    labelName: for (...) {
+        ...
+    }
+
+This allows us to break out of the label in multiple nested loops at once.
+
+* Test Driven Development
+
+TDD is a phrase you often hear in the dev world.
+It refers to the practice of writing automated tests that describe how your code should work before you write it.
+For example, if you want to write a function that adds a couple numbers, you would write a test that uses the function first.
