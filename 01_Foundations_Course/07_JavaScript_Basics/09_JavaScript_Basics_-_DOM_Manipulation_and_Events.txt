@@ -344,3 +344,50 @@ p::first-line matches the first line of all p elements:
 
     let links = document.querySelector('p::first-line');
 
+Q: What is the DOM? 
+A: The Document Object Model is a tree-like representation of the contents of a webpage (tree nodes).
+
+Q: How do you target the nodes you want to work with?
+A: You use selectors to target the nodes, for example using querySelector in JS
+
+Q: How do you create an element in the DOM?
+A: You can create an element using createElement.
+
+Q: How do you add an element to the DOM?
+A: Using appendChild.
+
+Q: How do you remove an element from the DOM?
+A: Using removeChild.
+
+Q: How do you alter an element in the DOM?
+A: Using a reference to that element (variable), to alter its properties.
+
+Q: When adding text to a DOM element, should you use textContent or innerHTML? Why?
+A: You should use textContent, because innerHTML is susceptible to JS injections.
+
+Q: Where should you include your JavaScript tag in your HTML file when working with DOM nodes?
+A: Ideally you should put your script source in the header, deferred for when the page loads.
+
+Q: How do events and listeners work?
+A: Events are actions that occur on a webpage, and listeners react to these events.
+
+Q: What are three ways of using events in your code?
+A: 1) embedding it in HTML, 2) using separate HTML / JS files and using arrow functions, 3) same as 2 but using an anonymous function
+
+Q: Why are event listeners the preferred way to handle events?
+A: Because it is more scalable and flexible than inline event handling.
+
+Q: What are the benefits of using named functions in your listeners?
+A: Named functions can considerably clear up the purpose of what your code does.
+
+Q: How do you attach listeners to groups of nodes?
+A: You can use querySelectorAll().
+
+Q: What is the difference between the return values of querySelector and querySelectorAll?
+A: querySelector returns the first selector found, whereas querySelectorAll returns all selectors.
+
+Q: What does a “nodelist” contain?
+A: A nodelist is similar to an array of elements, however it is missing some array methods.
+
+Q: Explain the difference between “capture” and “bubbling”.
+A: Capturing processes the DOM hierarchy from top-down, whereas bubbling processes the DOM hierarchy from bottom-up.
