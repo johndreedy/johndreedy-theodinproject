@@ -1,0 +1,346 @@
+* One of the most unique and useful abilities of JavaScript is its ability to manipulate the DOM
+
+* DOM (Document Object Model) is a tree-like representation of a webpage, a tree of HTML nodes
+
+* Targeting nodes with selectors
+
+In this example, you could use the following selectors to refer to <div class="display"></div>
+
+	- div.display
+	- .display
+	- #container > .display
+	- div#container > div.display
+
+You can also use relational selectors (firstElementChild, lastElementChild) in JS with special properties owned by the nodes
+
+When your HTML code is parsed by a web browser, it is converted to the DOM as was mentioned above.
+
+Some query selectors:
+	-element.querySelector(selector) - a reference to the first match of a selector
+	-element.querySelectorAll(selectors) - a "nodelist" containing references to all the matches of selectors
+
+For querySelectorAll the return value is not an array.
+It looks like one but is really a nodelist, meaning several array methods are missing.
+One solution is to convert it to Array.from() or the spread operator ...
+
+   document.createElement(tagName, [options])
+
+This creates a new element of tag type tagName. [options] means you can add some optional parameters.
+
+const div = document.createElement('div');
+
+This function does not put your new element in the DOM, it creates it in memory.
+This is so you can manipulate the element by adding styles, classic, ids, etc before placing it on the page.
+
+You can place elements into the DOM with one of the following methods:
+
+Append elements
+	-parentNode.appendChild(childNode)
+	-parentNode.insertBefore(newNode, referenceNode)
+
+Remove elements
+	-parentNode.removeChild(child)
+
+* Altering elements
+
+When you have a reference to an element, you can use it to alter the element's properties.
+
+This allows you to do many useful alterations, like:
+	- adding/removing/altering attributes
+	- changing classes
+	- adding inline style info
+
+    const div = document.createElement('div');
+
+    div.style.color = 'blue';                                      
+    div.style.cssText = 'color: blue; background: white;';          
+
+    div.setAttribute('style', 'color: blue; background: white;');    
+
+If you are using kebab-cased CSS from JS (hyphens between words) then you need to use camelCase or bracket notation instead of dashes.
+
+    div.style.background-color // does not work
+    div.style.backgroundColor // works
+    div.style['background-color'] // works
+    div.style.cssText = "background-color: white;" // works
+
+* Editing attributes
+
+    div.setAttribute('id', 'theDiv');
+    div.getAttribute('id');
+    div.removeAttribute('id');
+
+* Classes
+
+    div.classList.add('new');
+    div.classList.remove('new');
+    div.classList.toggle('active');
+
+* Adding text content
+
+    div.textContent = 'Hello World!';
+
+* Adding HTML content
+
+    div.innerHTML = '<span>Hello World!</span>';
+
+textContent is preferable, innerHTML should be used sparingly because it can create security risks.
+
+JS does not alter HTML but the DOM, so the HTML file will look the same, however JS changes what the browser renders.
+
+For the JS to run correctly, you can either:
+- include your source .js file at the bottom of your HTML
+- use <script> with the src attribute and the defer keyword which loads the file after the HTML is parsed
+
+* Events
+
+Now that we can manipulate the DOM with JS, the next step is making it happen dynamically.
+This can be such as mouse clicks and key presses.
+
+There are 3 ways of doing this:
+- Specify function attributes on your HTML elements 
+- Set properties of form (on[eventType], onclick, onmousedown)
+- Attach event listeners to the DOM nodes in your JS
+
+* Method 1
+
+	<button onclick="alert('Hello World')">Click Me</button>
+
+Cluttering our HTML with JS in this case.
+
+* Method 2
+
+	<!-- the HTML file -->
+	<button id="btn">Click Me</button>
+
+	// the JavaScript file
+	const btn = document.querySelector('#btn');
+	btn.onclick = () => alert("Hello World");
+
+This is better but the DOM element can only have 1 onclick property.
+
+* Method 3
+
+	<!-- the HTML file -->
+	<button id="btn">Click Me Too</button>
+
+	// the JavaScript file
+	const btn = document.querySelector('#btn');
+	btn.addEventListener('click', () => {
+		alert("Hello World");
+	});
+
+This allows multiple event listeners if the need arises (multi-line).
+
+* Attaching listeners to groups of nodes
+
+If you are attaching lots of similar event listeners to many elements, you can get a nodelist of all items matching a specific selector.
+
+    <div id="container">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+    </div>
+
+const buttons = document.querySelectorAll('button');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            alert(button.id);
+        });
+    });
+
+There are also events like:
+
+- click
+- dbclick
+- keydown
+- keyup
+
+* JAVASCRIPTTUTORIAL.NET ARTICLE - Understanding the DOM *
+
+* The DOM is an API for manipulating HTML documents, a hierarchy of nodes
+
+* Each document can only have one document element
+
+* Each node has a different node type:
+
+- ELEMENT_NODE (<p> or <div>)
+- TEXT_NODE (text inside elem or attr)
+- CDATA_SECTION_NODE (such as <!CDATA[[ … ]]>)
+- PROCESSING_INSTRUCTION_NODE (of an XML document)
+- COMMENT_NODE (such as <!-- … -->)
+- DOCUMENT_NODE (the document itself)
+- DOCUMENT_TYPE_NODE (such as <!DOCTYPE html>)
+- DOCUMENT_FRAGMENT_NODE
+
+You can get nodeType with node.nodeType
+
+A node is a generic name of any object in the DOM tree.
+An element is a node with a specific type of ELEMENT_NODE which is equal to 1.
+
+* GetElementById() and querySelector() returns an object with the Element type
+* GetElementsByTagName() or querySelectorAll() returns NodeList which is a collection of nodes. 
+
+<body> is a child of <html>, and a sibling of <head>.
+
+* getElementById() *
+
+	- document.getElementById() returns an Element that represents an HTML element with a specific id
+
+	- If the document has no element with that id, it will return null.
+
+	- Unlike querySelector(), it is only available on the document object.
+
+	- It is case sensitive. 
+
+	- If multiple elements have the same id (even being invalid), it will return the first element encountered.
+
+* getElementsByName *
+
+	- Every element on an HTML document may have a name attribute.
+
+	- Unlike id, multiple HTML elements can share the same value of name.
+
+	    <input type="radio" name="language" value="JavaScript">
+	    <input type="radio" name="language" value="TypeScript">
+
+	- To get all elements with a specified name, you use getElementsByName()
+
+	    let elements = document.getElementsByName(name);
+
+	- This returns a live nodelist of elements.
+
+* getElementsByTagName *
+
+	- getElementsByTagName() is a method of the document object / DOM element.
+
+	- This method accepts a tag name and returns a live HTMLCollection of elements with the matching tag name, in the order they appear in the document.
+
+	    let elements = document.getElementsByTagName(tagName);
+
+	- HTMLCollection is an array-like object, like arguments object of a function.
+
+* getElementsByClassName *
+
+	- This returns an array of objects of the child elements with a specified class name.
+
+	- It is available on the document element or any other elements.
+
+	- When calling the method on the document element, it searches the entire document and returns child elements:
+
+	    let elements = document.getElementsByClassName(names);
+
+	- When calling the method on a specific element, it returns the descendants of that element with the given class name:
+
+	    let elements = rootElement.getElementsByClassName(names);
+
+* querySelector & querySelectorAll * 
+
+	- querySelector() is a method of the Element interface. querySelector() allows you to select the first element that matches one or more CSS selectors.
+
+	    let element = parentNode.querySelector(selector);
+
+	- Here, the selector is a CSS selector or a group of CSS selectors to match the descendant elements of parentNode.
+
+	- If the selector is not valid CSS syntax, it will raise a SyntaxError exception.
+
+	- If no element matches the CSS selectors, it will return null.
+
+	- You can use querySelectorAll() to select all elements that match a CSS selector.
+
+	    let elementList = parentNode.querySelectorAll(selector);
+
+	- This returns a static NodeList of elements that match the CSS selector.
+
+	- If none match it, it returns an empty NodeList.
+
+	- To convert a NodeList into an array, you can use Array.from()
+
+	    let nodeList = document.querySelectorAll(selector);
+	    let elements = Array.from(nodeList);
+
+	1. Universal selector
+
+	    let element = document.querySelector('*');
+	    
+	    // selects first element in the document
+
+	    let elements = document.querySelectorAll('*');
+
+	    // selects all elements in the document
+
+	2. Type selector
+
+	    let firstHeading = document.querySelector('h1');
+
+	    // finds the first h1 element in the document
+
+	    let heading2 = document.querySelectorAll('h2');
+
+	    // finds all h2 elements
+
+	3. Class selector
+
+	    let note = document.querySelector('.menu-item');
+
+	    // finds first element with menu-item class
+
+	    let notes = document.querySelectorAll('.menu-item');
+
+	    // finds all elements with the menu class
+
+	4. ID Selector
+
+	    let logo = document.querySelector('#logo');
+	    
+	    // id should be unique, so querySelectorAll() is not relevant
+
+	5. Attribute selector
+
+	    // let autoplay = document.querySelector('[autoplay]');
+
+* Combinators *
+
+1) Descendant combinator
+
+To find descendants of a node, you use the space () descendant combinator:
+
+    let links = document.querySelector('p a');
+
+2) Child combinator
+
+The > child combinator finds all elements that are children of the first element:
+
+    let listItems = document.querySelectorAll('ul > li');
+
+3) General sibling combinator
+
+The ~ combinator selects siblings that share the same parent:
+
+    let links = document.querySelectorAll('p ~ a');
+
+4) Adjacent sibling combinator
+
+The + combinator selects adjacent siblings:
+
+    let links = document.querySelectorAll('h1 + a');
+
+* Pseudo *
+
+1) Pseudo-classes
+
+The : pseudo matches elements based on their states.
+
+li:nth-child(2) selects the second <li> in a list:
+
+    let listItem = document.querySelectorAll('li:nth-child(2)');
+
+2) Pseudo-elements
+
+The :: represent entities not included in the document.
+
+p::first-line matches the first line of all p elements:
+
+    let links = document.querySelector('p::first-line');
+
